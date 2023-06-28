@@ -1,0 +1,259 @@
+<app-menu></app-menu>
+
+<mat-card class="example-card">
+
+    <mat-card-title>Perfil Empresarial</mat-card-title>
+
+    <div class="form-personal">
+        <mat-card-content>
+    
+            <form class="example-form">
+
+                <h2>Dados da Empresa</h2>
+
+                <div class="dados-basicos">
+
+                    <div class="nome-empresa">
+                        <mat-form-field appearance="outline">
+                            <mat-label>Nome da Empresa</mat-label>
+                            <input matInput placeholder="Ex. Pizzaria Ltda">
+                        </mat-form-field>
+                    </div>
+
+                    <div class="cnpj-empresa">
+                        <mat-form-field appearance="outline">
+                            <mat-label>Cnpj</mat-label>
+                            <input matInput placeholder="Ex. 007.145.568/0001-45">
+                        </mat-form-field>
+                    </div>
+    
+                </div>
+
+                <h2>Separação das Finanças</h2>
+                
+                <mat-form-field  appearance="outline">
+                    <mat-label>A empresa possuí conta bancária pessoa jurídica e utiliza ela SOMENTE para pagamentos e recebimentos da empresa?</mat-label>
+                    <mat-select>
+                      <mat-option value="one">Não possuí conta bancária, utiliza a dos sócios pessoa física.</mat-option>
+                      <mat-option value="two">Possuí conta bancária, porém também RECEBE e PAGA por contas de pessoa física(sócios).</mat-option>
+                      <mat-option value="three">Possuí conta bancária, e apenas recebe por outra conta, todos os pagamentos são feitos pela da empresa.</mat-option>
+                      <mat-option value="four">Tem conta bancária da empresa e todos os pagamentos e recebimentos são feitos exclusivamente por ela</mat-option>
+                    </mat-select>
+                </mat-form-field>
+
+                <mat-form-field  appearance="outline">
+                    <mat-label>Os sócios recebem um pró-labore fixo todo mês (ou seja, recebem um salário assim como todos os demais funcionários)?</mat-label>
+                    <mat-select>
+                      <mat-option value="one">Não, retiradas são feitas para pagar quaisquer contas pessoais dos sócios ao longo do mês.</mat-option>
+                      <mat-option value="two">Mais ou menos... o valor da remuneração é fixo mas as retiradas acontecem conforme a necessidade.</mat-option>
+                      <mat-option value="three">Mais ou menos… o pró-labore é pago em apenas uma data no mês mas seu valor varia segundo a necessidade do sócio.</mat-option>
+                      <mat-option value="four">Sim! O pró-labore é fixo em valor e data e qualquer retirada além do planejado é abatida no próximo mês.</mat-option>
+                    </mat-select>
+                </mat-form-field>
+
+                <mat-form-field  appearance="outline">
+                    <mat-label>Existem hoje dentro das contas pagas pela empresa contas pessoais dos sócios?</mat-label>
+                    <mat-select>
+                      <mat-option value="one">Todas as contas pessoais do sócio e família são pagos pela conta da empresa.</mat-option>
+                      <mat-option value="two">Algumas contas pessoais são pagas pela conta da empresa.</mat-option>
+                      <mat-option value="three">Não são feitos pagamentos pessoais, porém as vezes o sócio utiliza o cartão de crédito da empresa.</mat-option>
+                      <mat-option value="four">Nenhuma conta pessoal dos sócios é paga pela conta da empresa e nenhum gasto pessoal é feito no cartão de crédito do comércio.</mat-option>
+                    </mat-select>
+                </mat-form-field>
+
+                <h2>Registros Financeiros</h2>
+
+
+                <mat-form-field  appearance="outline">
+                    <mat-label>A loja tem algum tipo de sistema de controle/cadastro das entradas e saídas de dinheiro?</mat-label>
+                    <mat-select>
+                      <mat-option value="one">Não é feito nenhum tipo de controle</mat-option>
+                      <mat-option value="two">É utilizado algum tipo de caderno ou anotações manuais</mat-option>
+                      <mat-option value="three">É utilizada uma planilha</mat-option>
+                      <mat-option value="four">Possuí um sistema de gestão financeira</mat-option>
+                    </mat-select>
+                </mat-form-field>
+
+                <mat-form-field  appearance="outline">
+                    <mat-label>Com que frequência são feitos os registros das receitas e despesas da empresa?</mat-label>
+                    <mat-select>
+                      <mat-option value="one">Não fazemos os registros.</mat-option>
+                      <mat-option value="two">Nem todos os meses são feitos os registros, são "aleatórios"</mat-option>
+                      <mat-option value="three">Pelo menos a cada quinze dias são feitos os registros</mat-option>
+                      <mat-option value="four">Semanalmente são feitos todos os registros e conciliação.</mat-option>
+                    </mat-select>
+                </mat-form-field>
+
+                <mat-form-field  appearance="outline">
+                    <mat-label>A empresa consegue ter controle de cada centavo que saiu e cada centavo que entrou em caixa ou banco no último mês?</mat-label>
+                    <mat-select>
+                      <mat-option value="one">Não é feito o controle de entradas e saídas</mat-option>
+                      <mat-option value="two">Existe algum tipo de controle mas não se consegue ter exatidão de cada centavo que entrou e saiu.</mat-option>
+                      <mat-option value="three">As entradas de dinheiro são controladas com exatidão, o faturamento é facilmente visualizado e acompanhado, porém as saídas de dinheiro não se tem a mesma clareza</mat-option>
+                      <mat-option value="four">A empresa consegue ter certeza de tudo que entrou e saiu.</mat-option>
+                    </mat-select>
+                </mat-form-field>
+
+                <mat-form-field  appearance="outline">
+                    <mat-label>A empresa consegue ter a previsão dos pagamentos e recebimentos para os próximos 90 dias?</mat-label>
+                    <mat-select>
+                      <mat-option value="one">Não, não tenho nenhuma previsão, acompanhamos o saldo dia a dia.</mat-option>
+                      <mat-option value="two">Mais ou menos, tenho certa noção dos valores que irei receber.</mat-option>
+                      <mat-option value="three">Mais ou menos, tenho o controle apenas dos pagamentos que irei fazer</mat-option>
+                      <mat-option value="four">Sim, temos a previsibilidade a de contas a pagar e receber,bem como o saldo irá se comportar com essas transações.</mat-option>
+                    </mat-select>
+                </mat-form-field>
+
+                <h2>Relatórios</h2>
+
+                <mat-form-field  appearance="outline">
+                    <mat-label>A empresa se apoia em relatórios financeiros e demonstrativos contábeis atualizados para acompanhar os resultados da empresa?</mat-label>
+                    <mat-select>
+                      <mat-option value="one">Não, não há nenhum relatório de caixa nem acompanhamento, até as notas fiscais não são acompanhadas corretamente.</mat-option>
+                      <mat-option value="two">Não. Apenas o acompanhamento de emissão de notas fiscais em sistema é realizado</mat-option>
+                      <mat-option value="three">Sim, Há acompanhamento dos relatórios gerenciais. Entretanto, esses dados e indicadores gerados nos relatórios não são aproveitados para tomada de decisão.</mat-option>
+                      <mat-option value="four">Sim, há acompanhamento dos relatórios gerenciais e total suporte das tomadas de decisões apoiadas nos demonstrativos.</mat-option>
+                    </mat-select>
+                </mat-form-field>
+
+                <mat-form-field  appearance="outline">
+                    <mat-label>Nos demonstrativos da empresa, gerados com o apoio da sua Contabilidade, você consegue visualizar de forma automática informações como: "Custos Variáveis", "Despesas Fixas" e "Margem de Contribuição"?</mat-label>
+                    <mat-select>
+                      <mat-option value="one">Não tenho acesso aos demonstrativos da minha empresa.</mat-option>
+                      <mat-option value="two">Os demonstrativos da minha empresa não condizem com a realidade e não são disponibilizadas essas informações.</mat-option>
+                      <mat-option value="three">Tenho os demonstrativos, mas não consigo visualizar as informações de forma automática, é preciso calcular.</mat-option>
+                      <mat-option value="four">Consigo analisar o demonstrativo e todas essas informações de forma precisa e fácil. </mat-option>
+                    </mat-select>
+                </mat-form-field>
+
+                <h2>Gráficos</h2>
+
+                <mat-form-field  appearance="outline">
+                    <mat-label>Você tem gráficos, dashboards e informações visuais que auxiliem na sua tomada de decisões?</mat-label>
+                    <mat-select>
+                      <mat-option value="one">Não, não há sequer informações úteis para isso.</mat-option>
+                      <mat-option value="two">Não. Há apenas informações financeiras, mas sem dashboards e gráficos para tomada de decisões.</mat-option>
+                      <mat-option value="three">Sim, há informações de alguns gráficos, sem dashboards e que são atualizados periodicamente, manualmente sem automatização.</mat-option>
+                      <mat-option value="four">Sim, há informações de gráficos e dashboards, com links atualizados em tempo real de acordo com alterações de receitas e despesas.</mat-option>
+                    </mat-select>
+                </mat-form-field>
+
+                <h2>Resultado</h2>
+
+                <mat-form-field  appearance="outline">
+                    <mat-label>A sua empresa faz no início de cada mês uma análise detalhada e periódica dos resultados financeiros do mês anterior?</mat-label>
+                    <mat-select>
+                      <mat-option value="one">Não, nem sabemos dos resultados financeiros</mat-option>
+                      <mat-option value="two">De certo modo, apesar de não ter muito tempo acompanho o caixa, quanto sobra na conta e etc.</mat-option>
+                      <mat-option value="three">Sim, acompanhamos os resultados na DRE e Fluxo de caixa</mat-option>
+                      <mat-option value="four">Sim, e é acompanhada de KPI'S, métricas e indicadores que ajudem na tomada de decisão para o processo de melhoria constante</mat-option>
+                    </mat-select>
+                </mat-form-field>
+
+                <mat-form-field  appearance="outline">
+                    <mat-label>Ao analisar os seus resultados, você traça ações de melhorias específicas para cada problema observado na análise?</mat-label>
+                    <mat-select>
+                      <mat-option value="one">Não são feitas análises financeiras no negócio.</mat-option>
+                      <mat-option value="two">Até existe a vontade de analisar os resultados, porém não existem controle dos dados para geração de informação.</mat-option>
+                      <mat-option value="three">São feitas análises mas não são traçadas ações de melhorias.</mat-option>
+                      <mat-option value="four">Mensalmente são traçadas ações de melhorias baseado nas análises de resultado do negócio.</mat-option>
+                    </mat-select>
+                </mat-form-field>
+
+                <h2>Indicadores</h2>
+
+                <mat-form-field  appearance="outline">
+                    <mat-label>A empresa possuí metas e acompanha os indicadores de performance?</mat-label>
+                    <mat-select>
+                      <mat-option value="one">Não. Sequer existem metas ou indicadores na minha empresa.</mat-option>
+                      <mat-option value="two">Em partes. Metas são realizadas no “feeling empresarial", porém sem relação direta com indicadores e há dificuldades nos planos de ações de melhoria.</mat-option>
+                      <mat-option value="three">De certo modo sim , metas são lastreadas em um planejamento estratégico,entretanto há dificuldades com plano de ações para melhoria.</mat-option>
+                      <mat-option value="four">Sim, bem como são feitas e acompanhadas em um planejamento estratégico que norteia toda a empresa,incluindo um plano de melhoria contínuo.</mat-option>
+                    </mat-select>
+                </mat-form-field>
+
+                <mat-form-field  appearance="outline">
+                    <mat-label>Você conhece o conceito de Ponto de Equilíbrio e faz tal cálculo para sua empresa?</mat-label>
+                    <mat-select>
+                      <mat-option value="one">Não sei o que é e nem como calcular o Ponto de Equilíbrio</mat-option>
+                      <mat-option value="two">Conheço o conceito, porém não sei como calcular</mat-option>
+                      <mat-option value="three">Conheço o conceito, como calcular mas não faço</mat-option>
+                      <mat-option value="four">Sei exatamente o Ponto de Equilíbrio da minha empresa</mat-option>
+                    </mat-select>
+                </mat-form-field>
+
+                <h2>Precificação</h2>
+
+                <mat-form-field  appearance="outline">
+                    <mat-label>Como você define o preço dos seus produtos?</mat-label>
+                    <mat-select>
+                      <mat-option value="one">Não faço nenhum cálculo, sigo o preço do mercado, baseado na concorrência.</mat-option>
+                      <mat-option value="two">Multiplico o Custo por um número x de vezes.</mat-option>
+                      <mat-option value="three">Utilizo uma planilha e o resultado é o preço.</mat-option>
+                      <mat-option value="four">Utilizo uma ferramenta de precificação, e faço análises após o resultado.</mat-option>
+                    </mat-select>
+                </mat-form-field>
+
+                <mat-form-field  appearance="outline">
+                    <mat-label>Você conhece qual é a %Margem de Contribuição Média dos seu mix de produtos?</mat-label>
+                    <mat-select>
+                      <mat-option value="one">Não sei o que significa Margem de Contribuição</mat-option>
+                      <mat-option value="two">Até conheço o conceito de Margem de Contribuição, mas não tenho ideia de como calcular.</mat-option>
+                      <mat-option value="three">Até conheço o conceito de Margem de Contribuição, mas não faço para todos os produtos, então não tenho a % de margem média.</mat-option>
+                      <mat-option value="four">Sim, sei exatamente qual é minha %MC média</mat-option>
+                    </mat-select>
+                </mat-form-field>
+
+                <mat-form-field  appearance="outline">
+                    <mat-label>Você conhece exatamente o preço ideal e a quantidade vendida de cada produto/serviço para lucrar o quanto você deseja?</mat-label>
+                    <mat-select>
+                      <mat-option value="one">Não, meu preço é calculado apenas pelo valor da concorrência,afinal não posso ficar atrás do meu concorrente na guerra de preços.</mat-option>
+                      <mat-option value="two">Acho que sim, adiciono sempre um percentual de lucro em relação ao valor pago do preço unitário.</mat-option>
+                      <mat-option value="three">De certo modo sim, é analisada a aceitação do mercado em relação a cada produto e a contribuição do lucro em cada produto.</mat-option>
+                      <mat-option value="four">Sim, é aplicado a fórmula de marcação do preço, levando em conta gastos fixos, gastos variáveis e a margem de lucro desejada sobre o produto. Auxiliando assim, as novas compras e produções, realização de promoções etc.</mat-option>
+                    </mat-select>
+                </mat-form-field>
+
+                <h2>Reserva Financeira</h2>
+
+                <mat-form-field  appearance="outline">
+                    <mat-label>A empresa tem o costume de ficar no vermelho (cheque especial) no banco, ou então está com dívidas de contas atrasadas?</mat-label>
+                    <mat-select>
+                      <mat-option value="one">Constatemente estamos no cheque especial e atrasando pagamentos.</mat-option>
+                      <mat-option value="two">As vezes atrasamos uma conta ou entramos no cheque especial.</mat-option>
+                      <mat-option value="three">Praticamente nunca entramos no cheque especial ou atrasamos contas.</mat-option>
+                      <mat-option value="four">Nunca entramos no cheque especial ou atrasamos uma conta</mat-option>
+                    </mat-select>
+                </mat-form-field>
+
+                <mat-form-field  appearance="outline">
+                    <mat-label>O Comércio tem empréstimos?</mat-label>
+                    <mat-select>
+                      <mat-option value="one">Possuí  empréstimos que somam mais que três meses de faturamento do negócio</mat-option>
+                      <mat-option value="two">Possuí alguns empréstimos que somam menos que três meses de faturamento do negócio</mat-option>
+                      <mat-option value="three">No momento não tem mas utilizou nos últimos meses.</mat-option>
+                      <mat-option value="four">Não possuí nenhum empréstimo e nem precisou nos últimos meses.</mat-option>
+                    </mat-select>
+                </mat-form-field>
+
+                <mat-form-field  appearance="outline">
+                    <mat-label>Se a empresa parasse de faturar, ou seja, se não entrasse absolutamente nenhum dinheiro, quanto tempo ela conseguiria pagar as despesas fixas sem entrar no negativo? (aproximadamente)</mat-label>
+                    <mat-select>
+                      <mat-option value="one">Menos que 1 Mes</mat-option>
+                      <mat-option value="two">Entre 1 e 3 Meses</mat-option>
+                      <mat-option value="three">Entre 4 e 6 meses</mat-option>
+                      <mat-option value="four">Acima de 6 meses</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </form>
+    
+        </mat-card-content>
+    
+        <button mat-raised-button color="primary">Cadastrar</button>
+
+    </div>
+
+
+</mat-card>
+
+
