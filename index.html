@@ -1,0 +1,708 @@
+
+<div class="form">
+
+    <h2>Dados da Empresa</h2>
+
+    <div class="dados-basicos">
+
+        <div class="nome-empresa">
+            <mat-form-field appearance="outline">
+                <mat-label>Nome da Empresa</mat-label>
+                <input matInput placeholder="Ex. Pizzaria Ltda" #empresa (keyup)="nome(empresa.value)">
+            </mat-form-field>
+        </div>
+
+        <div class="cnpj-empresa">
+            <mat-form-field appearance="outline">
+                <mat-label>Cnpj</mat-label>
+                <input matInput placeholder="Ex. 007.145.568/0001-45" #cnpj (keyup)="cnpjempresa(cnpj.value)">
+            </mat-form-field>
+        </div>
+
+    </div>
+
+    <h2>Separação das Finanças</h2>
+    
+    <div class="questionario">
+      <h2>A empresa possuí conta bancária pessoa jurídica e utiliza ela SOMENTE para pagamentos e recebimentos da empresa?</h2>
+
+
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="pergunta1" [(ngModel)]="dados.pergunta1" value="Não possuí conta bancária, utiliza a dos sócios pessoa física.">
+        <label class="form-check-label" for="pergunta1">
+          Não possuí conta bancária, utiliza a dos sócios pessoa física.
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="pergunta1" [(ngModel)]="dados.pergunta1" value="Possuí conta bancária, porém também RECEBE e PAGA por contas de pessoa física(sócios).">
+        <label class="form-check-label" for="pergunta1">
+          Possuí conta bancária, porém também RECEBE e PAGA por contas de pessoa física(sócios).
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="pergunta1" [(ngModel)]="dados.pergunta1" value="Possuí conta bancária, e apenas recebe por outra conta, todos os pagamentos são feitos pela da empresa.">
+        <label class="form-check-label" for="pergunta1">
+          Possuí conta bancária, e apenas recebe por outra conta, todos os pagamentos são feitos pela da empresa.
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="pergunta1" [(ngModel)]="dados.pergunta1" value="Tem conta bancária da empresa e todos os pagamentos e recebimentos são feitos exclusivamente por ela">
+        <label class="form-check-label" for="pergunta1">
+          Tem conta bancária da empresa e todos os pagamentos e recebimentos são feitos exclusivamente por ela
+        </label>
+      </div>
+    </div>
+
+
+    <div class="questionario">
+      <h2>Os sócios recebem um pró-labore fixo todo mês (ou seja, recebem um salário assim como todos os demais funcionários)?</h2>
+
+
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="pergunta2" [(ngModel)]="dados.pergunta2" value="Não, retiradas são feitas para pagar quaisquer contas pessoais dos sócios ao longo do mês.">
+        <label class="form-check-label" for="pergunta2">
+          Não, retiradas são feitas para pagar quaisquer contas pessoais dos sócios ao longo do mês.
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="pergunta2" [(ngModel)]="dados.pergunta2" value="Mais ou menos... o valor da remuneração é fixo mas as retiradas acontecem conforme a necessidade.">
+        <label class="form-check-label" for="pergunta2">
+          Mais ou menos... o valor da remuneração é fixo mas as retiradas acontecem conforme a necessidade.
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="pergunta2" [(ngModel)]="dados.pergunta2" value="Mais ou menos… o pró-labore é pago em apenas uma data no mês mas seu valor varia segundo a necessidade do sócio.">
+        <label class="form-check-label" for="pergunta2">
+          Mais ou menos… o pró-labore é pago em apenas uma data no mês mas seu valor varia segundo a necessidade do sócio.
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="pergunta2" [(ngModel)]="dados.pergunta2" value="Sim! O pró-labore é fixo em valor e data e qualquer retirada além do planejado é abatida no próximo mês.">
+        <label class="form-check-label" for="pergunta2">
+          Sim! O pró-labore é fixo em valor e data e qualquer retirada além do planejado é abatida no próximo mês.
+        </label>
+      </div>
+    </div>
+
+
+    <div class="questionario">
+      <h2>Existem hoje dentro das contas pagas pela empresa contas pessoais dos sócios?</h2>
+      
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="pergunta3" [(ngModel)]="dados.pergunta3" value="Todas as contas pessoais do sócio e família são pagos pela conta da empresa.">
+        <label class="form-check-label" for="pergunta3">
+          Todas as contas pessoais do sócio e família são pagos pela conta da empresa.
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="pergunta3" [(ngModel)]="dados.pergunta3" value="Algumas contas pessoais são pagas pela conta da empresa.">
+        <label class="form-check-label" for="pergunta3">
+          Algumas contas pessoais são pagas pela conta da empresa.
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="pergunta3" [(ngModel)]="dados.pergunta3" value="Não são feitos pagamentos pessoais, porém as vezes o sócio utiliza o cartão de crédito da empresa.">
+        <label class="form-check-label" for="pergunta3">
+          Não são feitos pagamentos pessoais, porém as vezes o sócio utiliza o cartão de crédito da empresa.
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="pergunta3" [(ngModel)]="dados.pergunta3" value="Nenhuma conta pessoal dos sócios é paga pela conta da empresa e nenhum gasto pessoal é feito no cartão de crédito do comércio.">
+        <label class="form-check-label" for="pergunta3">
+          Nenhuma conta pessoal dos sócios é paga pela conta da empresa e nenhum gasto pessoal é feito no cartão de crédito do comércio.
+        </label>
+      </div>
+    </div>
+
+    <h2>Registros Financeiros</h2>
+
+    
+    <div class="questionario">
+      <h2>A loja tem algum tipo de sistema de controle/cadastro das entradas e saídas de dinheiro?</h2>
+
+
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="pergunta4" [(ngModel)]="dados.pergunta4" value="Não é feito nenhum tipo de controle.">
+        <label class="form-check-label" for="pergunta4">
+          Não é feito nenhum tipo de controle.
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="pergunta4" [(ngModel)]="dados.pergunta4" value="É utilizado algum tipo de caderno ou anotações manuais.">
+        <label class="form-check-label" for="pergunta4">
+          É utilizado algum tipo de caderno ou anotações manuais.
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="pergunta4" [(ngModel)]="dados.pergunta4" value="É utilizada uma planilha.">
+        <label class="form-check-label" for="pergunta4">
+          É utilizada uma planilha.
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="pergunta4" [(ngModel)]="dados.pergunta4" value="Possuí um sistema de gestão financeira.">
+        <label class="form-check-label" for="pergunta4">
+          Possuí um sistema de gestão financeira.
+        </label>
+      </div>
+    </div>
+    
+    <div class="questionario">
+      <h2>Com que frequência são feitos os registros das receitas e despesas da empresa?</h2>
+
+
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="pergunta5" [(ngModel)]="dados.pergunta5" value="Não fazemos os registros.">
+        <label class="form-check-label" for="pergunta5">
+          Não fazemos os registros.
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="pergunta5" [(ngModel)]="dados.pergunta5" value="Nem todos os meses são feitos os registros, são 'aleatórios'.">
+        <label class="form-check-label" for="pergunta5">
+          Nem todos os meses são feitos os registros, são "aleatórios".
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="pergunta5" [(ngModel)]="dados.pergunta5" value="Pelo menos a cada quinze dias são feitos os registros.">
+        <label class="form-check-label" for="pergunta5">
+          Pelo menos a cada quinze dias são feitos os registros.
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="pergunta5" [(ngModel)]="dados.pergunta5" value="Semanalmente são feitos todos os registros e conciliação.">
+        <label class="form-check-label" for="pergunta5">
+          Semanalmente são feitos todos os registros e conciliação.
+        </label>
+      </div>
+    </div>
+
+    <!-- pergunta6 -->
+    <div class="questionario">
+      <h2>A empresa consegue ter controle de cada centavo que saiu e cada centavo que entrou em caixa ou banco no último mês?</h2>
+
+
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="pergunta6" [(ngModel)]="dados.pergunta6" value="Não é feito o controle de entradas e saídas">
+        <label class="form-check-label" for="pergunta6">
+          Não é feito o controle de entradas e saídas
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="pergunta6" [(ngModel)]="dados.pergunta6" value="Existe algum tipo de controle mas não se consegue ter exatidão de cada centavo que entrou e saiu.">
+        <label class="form-check-label" for="pergunta6">
+          Existe algum tipo de controle mas não se consegue ter exatidão de cada centavo que entrou e saiu.
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="pergunta6" [(ngModel)]="dados.pergunta6" value="As entradas de dinheiro são controladas com exatidão, o faturamento é facilmente visualizado e acompanhado, porém as saídas de dinheiro não se tem a mesma clareza">
+        <label class="form-check-label" for="pergunta6">
+          As entradas de dinheiro são controladas com exatidão, o faturamento é facilmente visualizado e acompanhado, porém as saídas de dinheiro não se tem a mesma clareza
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="pergunta6" [(ngModel)]="dados.pergunta6" value="A empresa consegue ter certeza de tudo que entrou e saiu.">
+        <label class="form-check-label" for="pergunta6">
+          A empresa consegue ter certeza de tudo que entrou e saiu.
+        </label>
+      </div>
+    </div>
+
+        <!-- pergunta7 -->
+    <div class="questionario">
+      <h2>A empresa consegue ter a previsão dos pagamentos e recebimentos para os próximos 90 dias?</h2>
+
+
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="pergunta7" [(ngModel)]="dados.pergunta7" value="Não, não tenho nenhuma previsão, acompanhamos o saldo dia a dia.">
+        <label class="form-check-label" for="pergunta7">
+          Não, não tenho nenhuma previsão, acompanhamos o saldo dia a dia.
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="pergunta7" [(ngModel)]="dados.pergunta7" value="Mais ou menos, tenho certa noção dos valores que irei receber.">
+        <label class="form-check-label" for="pergunta7">
+          Mais ou menos, tenho certa noção dos valores que irei receber.
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="pergunta7" [(ngModel)]="dados.pergunta7" value="Mais ou menos, tenho o controle apenas dos pagamentos que irei fazer">
+        <label class="form-check-label" for="pergunta7">
+          Mais ou menos, tenho o controle apenas dos pagamentos que irei fazer
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="pergunta7" [(ngModel)]="dados.pergunta7" value="Sim, temos a previsibilidade a de contas a pagar e receber,bem como o saldo irá se comportar com essas transações.">
+        <label class="form-check-label" for="pergunta7">
+          Sim, temos a previsibilidade a de contas a pagar e receber,bem como o saldo irá se comportar com essas transações.
+        </label>
+      </div>
+    </div>
+
+    <h2>Relatórios</h2>
+    
+        <!-- pergunta8 -->
+    <div class="questionario">
+      <h2>A empresa se apoia em relatórios financeiros e demonstrativos contábeis atualizados para acompanhar os resultados da empresa?</h2>
+
+
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="pergunta8" [(ngModel)]="dados.pergunta8" value="Não, não há nenhum relatório de caixa nem acompanhamento, até as notas fiscais não são acompanhadas corretamente.">
+        <label class="form-check-label" for="pergunta8">
+          Não, não há nenhum relatório de caixa nem acompanhamento, até as notas fiscais não são acompanhadas corretamente.
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="pergunta8" [(ngModel)]="dados.pergunta8" value="Não. Apenas o acompanhamento de emissão de notas fiscais em sistema é realizado">
+        <label class="form-check-label" for="pergunta8">
+          Não. Apenas o acompanhamento de emissão de notas fiscais em sistema é realizado
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="pergunta8" [(ngModel)]="dados.pergunta8" value="Sim, Há acompanhamento dos relatórios gerenciais. Entretanto, esses dados e indicadores gerados nos relatórios não são aproveitados para tomada de decisão.">
+        <label class="form-check-label" for="pergunta8">
+          Sim, Há acompanhamento dos relatórios gerenciais. Entretanto, esses dados e indicadores gerados nos relatórios não são aproveitados para tomada de decisão.
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="pergunta8" [(ngModel)]="dados.pergunta8" value="Sim, há acompanhamento dos relatórios gerenciais e total suporte das tomadas de decisões apoiadas nos demonstrativos.">
+        <label class="form-check-label" for="pergunta8">
+          Sim, há acompanhamento dos relatórios gerenciais e total suporte das tomadas de decisões apoiadas nos demonstrativos.                    </label>
+      </div>
+    </div>
+
+        <!-- pergunta9 -->
+    <div class="questionario">
+      <h2>Nos demonstrativos da empresa, gerados com o apoio da sua Contabilidade, você consegue visualizar de forma automática informações como: "Custos Variáveis", "Despesas Fixas" e "Margem de Contribuição"?</h2>
+
+
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="pergunta9" [(ngModel)]="dados.pergunta9" value="Não tenho acesso aos demonstrativos da minha empresa.">
+        <label class="form-check-label" for="pergunta9">
+          Não tenho acesso aos demonstrativos da minha empresa.
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="pergunta9" [(ngModel)]="dados.pergunta9" value="Os demonstrativos da minha empresa não condizem com a realidade e não são disponibilizadas essas informações.">
+        <label class="form-check-label" for="pergunta9">
+          Os demonstrativos da minha empresa não condizem com a realidade e não são disponibilizadas essas informações.
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="pergunta9" [(ngModel)]="dados.pergunta9" value=" Tenho os demonstrativos, mas não consigo visualizar as informações de forma automática, é preciso calcular.">
+        <label class="form-check-label" for="pergunta9">
+          Tenho os demonstrativos, mas não consigo visualizar as informações de forma automática, é preciso calcular.
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="pergunta9" [(ngModel)]="dados.pergunta9" value="Consigo analisar o demonstrativo e todas essas informações de forma precisa e fácil.">
+        <label class="form-check-label" for="pergunta9">
+          Consigo analisar o demonstrativo e todas essas informações de forma precisa e fácil.
+        </label>
+      </div>
+    </div>
+
+
+    
+    <h2>Gráficos</h2>
+        
+    
+    <!-- pergunta10 -->
+
+    <div class="questionario">
+      <h2>Você tem gráficos, dashboards e informações visuais que auxiliem na sua tomada de decisões?</h2>
+
+
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="pergunta10" [(ngModel)]="dados.pergunta10" value="Não, não há sequer informações úteis para isso.">
+        <label class="form-check-label" for="pergunta10">
+          Não, não há sequer informações úteis para isso.
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="pergunta10" [(ngModel)]="dados.pergunta10" value="Não. Há apenas informações financeiras, mas sem dashboards e gráficos para tomada de decisões.">
+        <label class="form-check-label" for="pergunta10">
+          Não. Há apenas informações financeiras, mas sem dashboards e gráficos para tomada de decisões.
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="pergunta10" [(ngModel)]="dados.pergunta10" value="Sim, há informações de alguns gráficos, sem dashboards e que são atualizados periodicamente, manualmente sem automatização.">
+        <label class="form-check-label" for="pergunta10">
+          Sim, há informações de alguns gráficos, sem dashboards e que são atualizados periodicamente, manualmente sem automatização.
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="pergunta10" [(ngModel)]="dados.pergunta10" value="Sim, há informações de gráficos e dashboards, com links atualizados em tempo real de acordo com alterações de receitas e despesas.">
+        <label class="form-check-label" for="pergunta10">
+          Sim, há informações de gráficos e dashboards, com links atualizados em tempo real de acordo com alterações de receitas e despesas.
+        </label>
+      </div>
+    </div>
+
+
+    <h2>Resultado</h2>
+
+
+    <!-- pergunta11 -->
+
+    <div class="questionario">
+      <h2>A sua empresa faz no início de cada mês uma análise detalhada e periódica dos resultados financeiros do mês anterior?</h2>
+
+
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="pergunta11" [(ngModel)]="dados.pergunta11" value="Não, nem sabemos dos resultados financeiros.">
+        <label class="form-check-label" for="pergunta11">
+          Não, nem sabemos dos resultados financeiros.
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="pergunta11" [(ngModel)]="dados.pergunta11" value="De certo modo, apesar de não ter muito tempo acompanho o caixa, quanto sobra na conta e etc.">
+        <label class="form-check-label" for="pergunta11">
+          De certo modo, apesar de não ter muito tempo acompanho o caixa, quanto sobra na conta e etc.
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="pergunta11" [(ngModel)]="dados.pergunta11" value="Sim, acompanhamos os resultados na DRE e Fluxo de caixa.">
+        <label class="form-check-label" for="pergunta11">
+          Sim, acompanhamos os resultados na DRE e Fluxo de caixa.
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="pergunta11" [(ngModel)]="dados.pergunta11" value="Sim, e é acompanhada de KPI'S, métricas e indicadores que ajudem na tomada de decisão para o processo de melhoria constante.">
+        <label class="form-check-label" for="pergunta11">
+          Sim, e é acompanhada de KPI'S, métricas e indicadores que ajudem na tomada de decisão para o processo de melhoria constante.
+        </label>
+      </div>
+    </div>
+
+
+    <!-- pergunta12 -->
+
+    <div class="questionario">
+      <h2>Ao analisar os seus resultados, você traça ações de melhorias específicas para cada problema observado na análise?</h2>
+
+
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="pergunta12" [(ngModel)]="dados.pergunta12" value="Não são feitas análises financeiras no negócio.">
+        <label class="form-check-label" for="pergunta12">
+          Não são feitas análises financeiras no negócio.
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="pergunta12" [(ngModel)]="dados.pergunta12" value="Até existe a vontade de analisar os resultados, porém não existem controle dos dados para geração de informação.">
+        <label class="form-check-label" for="pergunta12">
+          Até existe a vontade de analisar os resultados, porém não existem controle dos dados para geração de informação.
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="pergunta12" [(ngModel)]="dados.pergunta12" value=" São feitas análises mas não são traçadas ações de melhorias.">
+        <label class="form-check-label" for="pergunta12">
+          São feitas análises mas não são traçadas ações de melhorias.
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="pergunta12" [(ngModel)]="dados.pergunta12" value="Mensalmente são traçadas ações de melhorias baseado nas análises de resultado do negócio.">
+        <label class="form-check-label" for="pergunta12">
+          Mensalmente são traçadas ações de melhorias baseado nas análises de resultado do negócio.
+        </label>
+      </div>
+    </div>
+
+    <h2>Indicadores</h2>
+
+    <!-- pergunta13 -->
+
+    <div class="questionario">
+      <h2>A empresa possuí metas e acompanha os indicadores de performance?</h2>
+
+
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="pergunta14" [(ngModel)]="dados.pergunta13" value="Não. Sequer existem metas ou indicadores na minha empresa.">
+        <label class="form-check-label" for="pergunta14">
+          Não. Sequer existem metas ou indicadores na minha empresa.
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="pergunta14" [(ngModel)]="dados.pergunta13" value="Em partes. Metas são realizadas no 'feeling empresarial', porém sem relação direta com indicadores e há dificuldades nos planos de ações de melhoria.">
+        <label class="form-check-label" for="pergunta14">
+          Em partes. Metas são realizadas no 'feeling empresarial', porém sem relação direta com indicadores e há dificuldades nos planos de ações de melhoria.
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="pergunta14" [(ngModel)]="dados.pergunta13" value="De certo modo sim , metas são lastreadas em um planejamento estratégico,entretanto há dificuldades com plano de ações para melhoria.">
+        <label class="form-check-label" for="pergunta14">
+          De certo modo sim , metas são lastreadas em um planejamento estratégico,entretanto há dificuldades com plano de ações para melhoria.
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="pergunta14" [(ngModel)]="dados.pergunta13" value="Sim, bem como são feitas e acompanhadas em um planejamento estratégico que norteia toda a empresa,incluindo um plano de melhoria contínuo.">
+        <label class="form-check-label" for="pergunta14">
+          Sim, bem como são feitas e acompanhadas em um planejamento estratégico que norteia toda a empresa,incluindo um plano de melhoria contínuo.
+        </label>
+      </div>
+    </div>
+
+    <!-- pergunta14 -->
+
+    <div class="questionario">
+      <h2>Você conhece o conceito de Ponto de Equilíbrio e faz tal cálculo para sua empresa?</h2>
+
+
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="pergunta15" [(ngModel)]="dados.pergunta14" value="Não sei o que é e nem como calcular o Ponto de Equilíbrio.">
+        <label class="form-check-label" for="pergunta15">
+          Não sei o que é e nem como calcular o Ponto de Equilíbrio.
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="pergunta15" [(ngModel)]="dados.pergunta14" value="Conheço o conceito, porém não sei como calcular.">
+        <label class="form-check-label" for="pergunta15">
+          Conheço o conceito, porém não sei como calcular.
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="pergunta15" [(ngModel)]="dados.pergunta14" value="Conheço o conceito, como calcular mas não faço.">
+        <label class="form-check-label" for="pergunta15">
+          Conheço o conceito, como calcular mas não faço.
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="pergunta15" [(ngModel)]="dados.pergunta14" value="Sei exatamente o Ponto de Equilíbrio da minha empresa.">
+        <label class="form-check-label" for="pergunta15">
+          Sei exatamente o Ponto de Equilíbrio da minha empresa.
+        </label>
+      </div>
+    </div>
+
+    <!-- pergunta15 -->
+    
+    <div class="questionario">
+      <h2>Como você define o preço dos seus produtos?</h2>
+
+
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="pergunta16" [(ngModel)]="dados.pergunta15" value="Não faço nenhum cálculo, sigo o preço do mercado, baseado na concorrência.">
+        <label class="form-check-label" for="pergunta16">
+          Não faço nenhum cálculo, sigo o preço do mercado, baseado na concorrência.
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="pergunta16" [(ngModel)]="dados.pergunta15" value="Multiplico o Custo por um número x de vezes.">
+        <label class="form-check-label" for="pergunta16">
+          Multiplico o Custo por um número x de vezes.
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="pergunta16" [(ngModel)]="dados.pergunta15" value="Utilizo uma planilha e o resultado é o preço.">
+        <label class="form-check-label" for="pergunta16">
+          Utilizo uma planilha e o resultado é o preço.
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="pergunta16" [(ngModel)]="dados.pergunta15" value="Utilizo uma ferramenta de precificação, e faço análises após o resultado.">
+        <label class="form-check-label" for="pergunta16">
+          Utilizo uma ferramenta de precificação, e faço análises após o resultado.
+        </label>
+      </div>
+    </div>
+
+
+    <h2>Precificação</h2>
+
+    <!-- pergunta16 -->
+
+    <div class="questionario">
+      <h2>Como você define o preço dos seus produtos?</h2>
+
+
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="pergunta17" [(ngModel)]="dados.pergunta16" value="Não faço nenhum cálculo, sigo o preço do mercado, baseado na concorrência.">
+        <label class="form-check-label" for="pergunta17">
+          Não faço nenhum cálculo, sigo o preço do mercado, baseado na concorrência.
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="pergunta17" [(ngModel)]="dados.pergunta16" value="Multiplico o Custo por um número x de vezes.">
+        <label class="form-check-label" for="pergunta17">
+          Multiplico o Custo por um número x de vezes.
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="pergunta17" [(ngModel)]="dados.pergunta16" value="Utilizo uma planilha e o resultado é o preço.">
+        <label class="form-check-label" for="pergunta17">
+          Utilizo uma planilha e o resultado é o preço.
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="pergunta17" [(ngModel)]="dados.pergunta16" value="Utilizo uma ferramenta de precificação, e faço análises após o resultado.">
+        <label class="form-check-label" for="pergunta17">
+          Utilizo uma ferramenta de precificação, e faço análises após o resultado.
+        </label>
+      </div>
+    </div>
+
+    <!-- pergunta17 -->
+
+    <div class="questionario">
+      <h2>Você conhece qual é a %Margem de Contribuição Média dos seu mix de produtos?</h2>
+
+
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="pergunta18" [(ngModel)]="dados.pergunta17" value="Não sei o que significa Margem de Contribuição.">
+        <label class="form-check-label" for="pergunta18">
+          Não sei o que significa Margem de Contribuição.
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="pergunta18" [(ngModel)]="dados.pergunta17" value="Até conheço o conceito de Margem de Contribuição, mas não tenho ideia de como calcular.">
+        <label class="form-check-label" for="pergunta18">
+          Até conheço o conceito de Margem de Contribuição, mas não tenho ideia de como calcular.
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="pergunta18" [(ngModel)]="dados.pergunta17" value="Até conheço o conceito de Margem de Contribuição, mas não faço para todos os produtos, então não tenho a % de margem média.">
+        <label class="form-check-label" for="pergunta18">
+          Até conheço o conceito de Margem de Contribuição, mas não faço para todos os produtos, então não tenho a % de margem média.
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="pergunta18" [(ngModel)]="dados.pergunta17" value="Sim, sei exatamente qual é minha %MC média.">
+        <label class="form-check-label" for="pergunta18">
+          Sim, sei exatamente qual é minha %MC média.
+        </label>
+      </div>
+    </div>
+
+
+    <!-- pergunta18 -->
+
+    <div class="questionario">
+      <h2>Você conhece exatamente o preço ideal e a quantidade vendida de cada produto/serviço para lucrar o quanto você deseja?</h2>
+
+
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="pergunta19" [(ngModel)]="dados.pergunta18" value="Não, meu preço é calculado apenas pelo valor da concorrência,afinal não posso ficar atrás do meu concorrente na guerra de preços.">
+        <label class="form-check-label" for="pergunta19">
+          Não, meu preço é calculado apenas pelo valor da concorrência,afinal não posso ficar atrás do meu concorrente na guerra de preços.
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="pergunta19" [(ngModel)]="dados.pergunta18" value="Acho que sim, adiciono sempre um percentual de lucro em relação ao valor pago do preço unitário.">
+        <label class="form-check-label" for="pergunta19">
+          Acho que sim, adiciono sempre um percentual de lucro em relação ao valor pago do preço unitário.
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="pergunta19" [(ngModel)]="dados.pergunta18" value="De certo modo sim, é analisada a aceitação do mercado em relação a cada produto e a contribuição do lucro em cada produto.">
+        <label class="form-check-label" for="pergunta19">
+          De certo modo sim, é analisada a aceitação do mercado em relação a cada produto e a contribuição do lucro em cada produto.
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="pergunta19" [(ngModel)]="dados.pergunta18" value="Sim, é aplicado a fórmula de marcação do preço, levando em conta gastos fixos, gastos variáveis e a margem de lucro desejada sobre o produto. Auxiliando assim, as novas compras e produções, realização de promoções etc.">
+        <label class="form-check-label" for="pergunta19">
+          Sim, é aplicado a fórmula de marcação do preço, levando em conta gastos fixos, gastos variáveis e a margem de lucro desejada sobre o produto. Auxiliando assim, as novas compras e produções, realização de promoções etc.
+        </label>
+      </div>
+    </div>
+
+    <h2>Reserva Financeira</h2>
+
+    <!-- pergunta19 -->
+
+    <div class="questionario">
+      <h2>A empresa tem o costume de ficar no vermelho (cheque especial) no banco, ou então está com dívidas de contas atrasadas?</h2>
+
+
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="pergunta20" [(ngModel)]="dados.pergunta19" value="Constatemente estamos no cheque especial e atrasando pagamentos.">
+        <label class="form-check-label" for="pergunta20">
+          Constatemente estamos no cheque especial e atrasando pagamentos.
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="pergunta20" [(ngModel)]="dados.pergunta19" value="As vezes atrasamos uma conta ou entramos no cheque especial.">
+        <label class="form-check-label" for="pergunta20">
+          As vezes atrasamos uma conta ou entramos no cheque especial.
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="pergunta20" [(ngModel)]="dados.pergunta19" value="Praticamente nunca entramos no cheque especial ou atrasamos contas.">
+        <label class="form-check-label" for="pergunta20">
+          Praticamente nunca entramos no cheque especial ou atrasamos contas.
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="pergunta20" [(ngModel)]="dados.pergunta19" value="Nunca entramos no cheque especial ou atrasamos uma conta.">
+        <label class="form-check-label" for="pergunta20">
+          Nunca entramos no cheque especial ou atrasamos uma conta.
+        </label>
+      </div>
+    </div>
+
+    <!-- pergunta20 -->
+
+    <div class="questionario">
+      <h2>O Comércio tem empréstimos?</h2>
+
+
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="pergunta21" [(ngModel)]="dados.pergunta20" value="Possuí  empréstimos que somam mais que três meses de faturamento do negócio.">
+        <label class="form-check-label" for="pergunta21">
+          Possuí  empréstimos que somam mais que três meses de faturamento do negócio.
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="pergunta21" [(ngModel)]="dados.pergunta20" value="Possuí alguns empréstimos que somam menos que três meses de faturamento do negócio.">
+        <label class="form-check-label" for="pergunta21">
+          Possuí alguns empréstimos que somam menos que três meses de faturamento do negócio.
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="pergunta21" [(ngModel)]="dados.pergunta20" value="No momento não tem mas utilizou nos últimos meses.">
+        <label class="form-check-label" for="pergunta21">
+          No momento não tem mas utilizou nos últimos meses.
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="pergunta21" [(ngModel)]="dados.pergunta20" value="Não possuí nenhum empréstimo e nem precisou nos últimos meses.">
+        <label class="form-check-label" for="pergunta21">
+          Não possuí nenhum empréstimo e nem precisou nos últimos meses.
+        </label>
+      </div>
+    </div>
+
+    <!-- pergunta21 -->
+
+    <div class="questionario">
+      <h2>Se a empresa parasse de faturar, ou seja, se não entrasse absolutamente nenhum dinheiro, quanto tempo ela conseguiria pagar as despesas fixas sem entrar no negativo? (aproximadamente)</h2>
+
+
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="pergunta22" [(ngModel)]="dados.pergunta21" value="Menos que 1 Mes.">
+        <label class="form-check-label" for="pergunta22">
+          Menos que 1 Mes.
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="pergunta22" [(ngModel)]="dados.pergunta21" value="Entre 1 e 3 Meses.">
+        <label class="form-check-label" for="pergunta22">
+          Entre 1 e 3 Meses.
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="pergunta22" [(ngModel)]="dados.pergunta21" value="Entre 4 e 6 meses.">
+        <label class="form-check-label" for="pergunta22">
+          Entre 4 e 6 meses.
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="pergunta22" [(ngModel)]="dados.pergunta21" value="Acima de 6 meses.">
+        <label class="form-check-label" for="pergunta22">
+          Acima de 6 meses.
+        </label>
+      </div>
+    </div>
+
+
+  </div>

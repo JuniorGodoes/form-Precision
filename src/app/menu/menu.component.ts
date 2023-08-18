@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { DomSanitizer } from '@angular/platform-browser';
+
 
 @Component({
   selector: 'app-menu',
@@ -7,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MenuComponent implements OnInit {
 
-  constructor() { }
+  constructor(private sanitizer: DomSanitizer) { }
+
+  imagePath: any;
 
   ngOnInit(): void {
+    this.imagePath = this.sanitizer.bypassSecurityTrustResourceUrl('assets/logo.jpeg');
   }
 
 }

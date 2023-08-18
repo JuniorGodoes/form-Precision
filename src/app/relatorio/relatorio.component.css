@@ -1,9 +1,22 @@
 
 .body{
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     margin: 0;
+}
+
+.relatorio{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 90%;
+    margin-top: 30px;
+}
+
+.sub-menu{
+    margin-bottom: 15px;
 }
 
 .figurinha{
@@ -18,7 +31,7 @@ mat-form-field{
 
 .card-custon{
     height: 300px;
-    width: 600px;
+    width: 70%;
 }
 
 h2{
@@ -124,8 +137,7 @@ h2{
     justify-content: center;
     text-align: center;
     gap: 10px;
-    opacity: 0; /* Começa com transparência total */
-    transition: opacity 1.5s;
+    margin-top: 30px;
 }
 
 .questionario.show{

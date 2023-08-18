@@ -1,0 +1,147 @@
+<app-menu></app-menu>
+
+<div class="body">
+
+    <div class="card-custon" *ngIf="filtro">
+
+        <form class="example-form"> 
+
+            <div class="questionario">
+
+              <h2>Gerar Relatório</h2>
+
+              <div class="dados-basicos">
+
+                  <div class="nome-empresa">
+                    <mat-form-field>
+                        <mat-label>Empresa escolhida</mat-label>
+                        <mat-select [(ngModel)]="empresaescolhida" name="food">
+                          <mat-option *ngFor="let empresa of empresas" [value]="empresa">
+                            {{ empresa }}
+                          </mat-option>
+                        </mat-select>
+                      </mat-form-field>
+                  </div>
+  
+              </div>
+
+              <button class="custom-button" color="primary" (click)="gerar()">CONFIRMAR</button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+    <div class="relatorio" *ngIf="relatorio">
+
+        <div class="sub-menu">
+          <button class="custom-button" color="primary" (click)="voltar()">Voltar</button>
+        </div>
+
+        <table class="table table-bordered">
+
+            <thead>
+              <tr>
+                <th class="center fixed "><h2>Setor</h2></th>
+                <th class="center fixed "><h2>Perguntas</h2></th>
+                <th class="center fixed "><h2>Respostas</h2></th>
+                <th class="center fixed "><h2>Feedback Personalizado</h2></th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td rowspan="3"><h3>Separação das Finanças</h3></td>
+                <td><h3>A empresa possuí conta bancária pessoa jurídica e utiliza ela SOMENTE para pagamentos e recebimentos da empresa?</h3></td>
+                <td><h3>{{ Resposta1 }}</h3></td>
+              </tr>
+              <tr>
+                <td><h3>Os sócios recebem um pró-labore fixo todo mês (ou seja, recebem um salário assim como todos os demais funcionários)?</h3></td>
+                <td><h3>{{ Resposta2 }}</h3></td>
+              </tr>
+              <tr>
+                <td><h3>Existem hoje dentro das contas pagas pela empresa contas pessoais dos sócios?</h3></td>
+                <td><h3>{{ Resposta3 }}</h3></td>
+              </tr>
+              <tr>
+                <td rowspan="4"><h3>Registros Financeiros</h3></td>
+                <td><h3>A loja tem algum tipo de sistema de controle/cadastro das entradas e saídas de dinheiro?</h3></td>
+                <td><h3>{{ Resposta4 }}</h3></td>
+              </tr>
+              <tr>
+                <td><h3>Os sócios recebem um pró-labore fixo todo mês (ou seja, recebem um salário assim como todos os demais funcionários)?</h3></td>
+                <td><h3>{{ Resposta5 }}</h3></td>
+              </tr>
+              <tr>
+                <td><h3>A empresa consegue ter controle de cada centavo que saiu e cada centavo que entrou em caixa ou banco no último mês?</h3></td>
+                <td><h3>{{ Resposta6 }}</h3></td>
+              </tr>
+              <tr>
+                <td><h3>A empresa consegue ter a previsão dos pagamentos e recebimentos para os próximos 90 dias?</h3></td>
+                <td><h3>{{ Resposta7 }}</h3></td>
+              </tr>
+              <tr>
+                <td rowspan="2"><h3>Relatórios</h3></td>
+                <td><h3>A empresa se apoia em relatórios financeiros e demonstrativos contábeis atualizados para acompanhar os resultados da empresa?</h3></td>
+                <td><h3>{{ Resposta8 }}</h3></td>
+              </tr>
+              <tr>
+                <td><h3>Nos demonstrativos da empresa, gerados com o apoio da sua Contabilidade, você consegue visualizar de forma automática informações como: "Custos Variáveis", "Despesas Fixas" e "Margem de Contribuição"?</h3></td>
+                <td><h3>{{ Resposta9 }}</h3></td>
+              </tr>
+              <tr>
+                <td rowspan="1"><h3>Gráficos</h3></td>
+                <td><h3>Você tem gráficos, dashboards e informações visuais que auxiliem na sua tomada de decisões?</h3></td>
+                <td><h3>{{ Resposta10 }}</h3></td>
+              </tr>
+              <tr>
+                <td rowspan="2"><h3>Resultado</h3></td>
+                <td><h3>A sua empresa faz no início de cada mês uma análise detalhada e periódica dos resultados financeiros do mês anterior?</h3></td>
+                <td><h3>{{ Resposta11 }}</h3></td>
+              </tr>
+              <tr>
+                <td><h3>Ao analisar os seus resultados, você traça ações de melhorias específicas para cada problema observado na análise?</h3></td>
+                <td><h3>{{ Resposta12 }}</h3></td>
+              </tr>
+              <tr>
+                <td rowspan="2"><h3>Indicadores</h3></td>
+                <td><h3>A empresa possuí metas e acompanha os indicadores de performance?</h3></td>
+                <td><h3>{{ Resposta13 }}</h3></td>
+              </tr>
+              <tr>
+                <td><h3>Você conhece o conceito de Ponto de Equilíbrio e faz tal cálculo para sua empresa?</h3></td>
+                <td><h3>{{ Resposta14 }}</h3></td>
+              </tr>
+              <tr>
+                <td rowspan="3"><h3>Precificação</h3></td>
+                <td><h3>Como você define o preço dos seus produtos?</h3></td>
+                <td><h3>{{ Resposta15 }}</h3></td>
+              </tr>
+              <tr>
+                <td><h3>Você conhece qual é a %Margem de Contribuição Média dos seu mix de produtos?</h3></td>
+                <td><h3>{{ Resposta17 }}</h3></td>
+              </tr>
+              <tr>
+                <td><h3>Você conhece exatamente o preço ideal e a quantidade vendida de cada produto/serviço para lucrar o quanto você deseja?</h3></td>
+                <td><h3>{{ Resposta18 }}</h3></td>
+              </tr>
+              <tr>
+                <td rowspan="3"><h3>Reserva Financeira</h3></td>
+                <td><h3>A empresa tem o costume de ficar no vermelho (cheque especial) no banco, ou então está com dívidas de contas atrasadas?</h3></td>
+                <td><h3>{{ Resposta19 }}</h3></td>
+              </tr>
+              <tr>
+                <td><h3>O Comércio tem empréstimos?</h3></td>
+                <td><h3>{{ Resposta20 }}</h3></td>
+              </tr>
+              <tr>
+                <td><h3>Se a empresa parasse de faturar, ou seja, se não entrasse absolutamente nenhum dinheiro, quanto tempo ela conseguiria pagar as despesas fixas sem entrar no negativo? (aproximadamente)</h3></td>
+                <td><h3>{{ Resposta21 }}</h3></td>
+              </tr>
+            </tbody>
+        </table>
+
+    </div>
+
+</div>
