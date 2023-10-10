@@ -7,4 +7,26 @@ mat-toolbar{
 .logo {
     width: 140px;
     height: 100px;
+}
+
+.custom-button {
+    background-color: #ffffff;
+    color:  rgb(3, 133, 133);
+    font-size: 16px;
+    padding: 12px 20px;
+    border: solid  rgb(3, 133, 133) 2px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.custom-button:hover {
+    color: #fff;
+    background-color: rgb(3, 133, 133);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   }
+
+  .custom-button:active {
+    background-color: rgb(3, 133, 133);
+  }
+

@@ -47,26 +47,85 @@ export class FormComponent implements OnInit {
     empresa: '',
     cnpj: '',
     pergunta1: '',
+    feedback1: '',
+    pontos1: Number,
+
     pergunta2: '',
+    feedback2: '',
+    pontos2: Number,
+
     pergunta3: '',
+    feedback3: '',
+    pontos3: Number,
+
     pergunta4: '',
+    feedback4: '',
+    pontos4: Number,
+
     pergunta5: '',
+    feedback5: '',
+    pontos5: Number,
+
     pergunta6: '',
+    feedback6: '',
+    pontos6: Number,
+
     pergunta7: '',
+    feedback7: '',
+    pontos7: Number,
+
     pergunta8: '',
+    feedback8: '',
+    pontos8: Number,
+
     pergunta9: '',
+    feedback9: '',
+    pontos9: Number,
+
     pergunta10: '',
+    feedback10: '',
+    pontos10: Number,
+
     pergunta11: '',
+    feedback11: '',
+    pontos11: Number,
+
     pergunta12: '',
+    feedback12: '',
+    pontos12: Number,
+
     pergunta13: '',
+    feedback13: '',
+    pontos13: Number,
+
     pergunta14: '',
+    feedback14: '',
+    pontos14: Number,
+
     pergunta15: '',
+    feedback15: '',
+    pontos15: Number,
+
     pergunta16: '',
+    feedback16: '',
+    pontos16: Number,
+
     pergunta17: '',
+    feedback17: '',
+    pontos17: Number,
+
     pergunta18: '',
+    feedback18: '',
+    pontos18: Number,
+
     pergunta19: '',
+    feedback19: '',
+    pontos19: Number,
+
     pergunta20: '',
-    pergunta21: ''
+    feedback20: '',
+    pontos20: Number,
+
   }
 
   pergunta0 = true;
@@ -153,8 +212,7 @@ export class FormComponent implements OnInit {
       this.dados.pergunta17 != '' &&
       this.dados.pergunta18 != '' &&
       this.dados.pergunta19 != '' &&
-      this.dados.pergunta20 != '' &&
-      this.dados.pergunta21 != '' 
+      this.dados.pergunta20 != '' 
     ){
       this.service.enviardados(this.dados).subscribe(
         (response) => {
@@ -196,6 +254,8 @@ export class FormComponent implements OnInit {
     this.pergunta2 = true
 
     this.dados.pergunta1 = resposta
+    this.dados.feedback1 = feedback
+    this.dados.pontos1 = pontos
 
     this.showElement = false
     setTimeout(() => {
@@ -208,6 +268,8 @@ export class FormComponent implements OnInit {
     this.pergunta3 = true
 
     this.dados.pergunta2 = info
+    this.dados.feedback2 = feedback
+    this.dados.pontos2 = pontos
 
     this.showElement = false
     setTimeout(() => {
@@ -220,6 +282,8 @@ export class FormComponent implements OnInit {
     this.pergunta4 = true
 
     this.dados.pergunta3 = info
+    this.dados.feedback3 = feedback
+    this.dados.pontos3 = pontos
 
     this.showElement = false
     setTimeout(() => {
@@ -232,6 +296,8 @@ export class FormComponent implements OnInit {
     this.pergunta5 = true
 
     this.dados.pergunta4 = info
+    this.dados.feedback4 = feedback
+    this.dados.pontos4 = pontos
 
     this.showElement = false
     setTimeout(() => {
@@ -244,6 +310,8 @@ export class FormComponent implements OnInit {
     this.pergunta6 = true
 
     this.dados.pergunta5 = info
+    this.dados.feedback5 = feedback
+    this.dados.pontos5 = pontos
 
     this.showElement = false
     setTimeout(() => {
@@ -256,6 +324,8 @@ export class FormComponent implements OnInit {
     this.pergunta7 = true
 
     this.dados.pergunta6 = info
+    this.dados.feedback6 = feedback
+    this.dados.pontos6 = pontos
 
     this.showElement = false
     setTimeout(() => {
@@ -268,6 +338,8 @@ export class FormComponent implements OnInit {
     this.pergunta8 = true
 
     this.dados.pergunta7 = info
+    this.dados.feedback7 = feedback
+    this.dados.pontos7 = pontos
 
     this.showElement = false
     setTimeout(() => {
@@ -280,6 +352,8 @@ export class FormComponent implements OnInit {
     this.pergunta9 = true
 
     this.dados.pergunta8 = info
+    this.dados.feedback8 = feedback
+    this.dados.pontos8 = pontos
 
     this.showElement = false
     setTimeout(() => {
@@ -292,6 +366,8 @@ export class FormComponent implements OnInit {
     this.pergunta10 = true
 
     this.dados.pergunta9 = info
+    this.dados.feedback9 = feedback
+    this.dados.pontos9 = pontos
 
     this.showElement = false
     setTimeout(() => {
@@ -304,6 +380,8 @@ export class FormComponent implements OnInit {
     this.pergunta11 = true
 
     this.dados.pergunta10 = info
+    this.dados.feedback10 = feedback
+    this.dados.pontos10 = pontos
 
     this.showElement = false
     setTimeout(() => {
@@ -316,6 +394,8 @@ export class FormComponent implements OnInit {
     this.pergunta12 = true
 
     this.dados.pergunta11 = info
+    this.dados.feedback11 = feedback
+    this.dados.pontos11 = pontos
 
     this.showElement = false
     setTimeout(() => {
@@ -328,6 +408,8 @@ export class FormComponent implements OnInit {
     this.pergunta13 = true
 
     this.dados.pergunta12 = info
+    this.dados.feedback12 = feedback
+    this.dados.pontos12 = pontos
 
     this.showElement = false
     setTimeout(() => {
@@ -340,6 +422,8 @@ export class FormComponent implements OnInit {
     this.pergunta14 = true
 
     this.dados.pergunta13 = info
+    this.dados.feedback13 = feedback
+    this.dados.pontos13 = pontos
 
     this.showElement = false
     setTimeout(() => {
@@ -352,6 +436,8 @@ export class FormComponent implements OnInit {
     this.pergunta15 = true
 
     this.dados.pergunta14 = info
+    this.dados.feedback14 = feedback
+    this.dados.pontos14 = pontos
 
     this.showElement = false
     setTimeout(() => {
@@ -364,6 +450,8 @@ export class FormComponent implements OnInit {
     this.pergunta16 = true
 
     this.dados.pergunta15 = info
+    this.dados.feedback15 = feedback
+    this.dados.pontos15 = pontos
 
     this.showElement = false
     setTimeout(() => {
@@ -376,6 +464,8 @@ export class FormComponent implements OnInit {
     this.pergunta17 = true
 
     this.dados.pergunta16 = info
+    this.dados.feedback16 = feedback
+    this.dados.pontos16 = pontos
 
     this.showElement = false
     setTimeout(() => {
@@ -388,6 +478,8 @@ export class FormComponent implements OnInit {
     this.pergunta18 = true
 
     this.dados.pergunta17 = info
+    this.dados.feedback17 = feedback
+    this.dados.pontos17 = pontos
 
     this.showElement = false
     setTimeout(() => {
@@ -400,6 +492,8 @@ export class FormComponent implements OnInit {
     this.pergunta19 = true
 
     this.dados.pergunta18 = info
+    this.dados.feedback18 = feedback
+    this.dados.pontos18 = pontos
 
     this.showElement = false
     setTimeout(() => {
@@ -412,6 +506,8 @@ export class FormComponent implements OnInit {
     this.pergunta20 = true
 
     this.dados.pergunta19 = info
+    this.dados.feedback19 = feedback
+    this.dados.pontos19 = pontos
 
     this.showElement = false
     setTimeout(() => {
@@ -423,6 +519,8 @@ export class FormComponent implements OnInit {
     this.pergunta20 = false
 
     this.dados.pergunta20 = info
+    this.dados.feedback20 = feedback
+    this.dados.pontos20 = pontos
 
     this.showElement = false
     setTimeout(() => {
@@ -438,6 +536,7 @@ export class FormComponent implements OnInit {
       }
     )
     this.router.navigate(['/confirmacao']);
+    console.log(this.dados)
   }
 
 

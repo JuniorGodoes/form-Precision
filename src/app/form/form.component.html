@@ -190,22 +190,34 @@
 
               <div class="form-check">
                 <button class="custom-button" 
-                (click)="next4('Não é feito nenhum tipo de controle.')">Não é feito nenhum tipo de controle.</button>
+                (click)="next4('Não é feito nenhum tipo de controle.',
+                'Não ter nenhum tipo de controle ou registro é o início do caos financeiro. Não se pode gerenciar o que não é medido. E para ser medido, tem que se ter controle.',
+                1
+                )">Não é feito nenhum tipo de controle.</button>
               </div>
 
               <div class="form-check">
                 <button class="custom-button" 
-                (click)="next4('É utilizado algum tipo de caderno ou anotações manuais.')">É utilizado algum tipo de caderno ou anotações manuais.</button>
+                (click)="next4('É utilizado algum tipo de caderno ou anotações manuais.',
+                'Muito importante você realizar as anotações em algum lugar, porém caderno ou lançamentos manuais não conseguem gerar relatórios automatizados e confiáveis para acelerar e melhorar a tomada de decisão.',
+                2
+                )">É utilizado algum tipo de caderno ou anotações manuais.</button>
               </div>
 
               <div class="form-check">
                 <button class="custom-button" 
-                (click)="next4('É utilizada uma planilha.')">É utilizada uma planilha.</button>
+                (click)="next4('É utilizada uma planilha.',
+                'O hábito do registro é essencial para uma boa gestão financeira. Ter uma planilha e registrar tudo o que acontece é uma atitude louvável e se a planilha for boa, serão gerados bons insights e indicadores.',
+                3
+                )">É utilizada uma planilha.</button>
               </div>
 
               <div class="form-check">
                 <button class="custom-button" 
-                (click)="next4('Possuí um sistema de gestão financeira.')">Possuí um sistema de gestão financeira.</button>
+                (click)="next4('Possuí um sistema de gestão financeira.',
+                'Ter um sistema de gestão financeira bem alimentado é o melhor dos cenários. O sistema já consegue gerar demonstrativos automáticos, reduzindo o trabalho e gerando informações de valor.',
+                4
+                )">Possuí um sistema de gestão financeira.</button>
               </div>
 
 
@@ -218,23 +230,39 @@
                 <img [src]="image5" alt="Minha Imagem" class="figurinha">
               </div>
 
-              <h2>Os sócios recebem um pró-labore fixo todo mês (ou seja, recebem um salário assim como todos os demais funcionários)?</h2>
+              <h2>Com que frequência são feitos os registros das receitas e despesas da empresa?</h2>
 
 
               <div class="form-check">
-                <button class="custom-button" (click)="next5('Não, retiradas são feitas para pagar quaisquer contas pessoais dos sócios ao longo do mês.')">Não, retiradas são feitas para pagar quaisquer contas pessoais dos sócios ao longo do mês.</button>
+                <button class="custom-button" 
+                (click)="next5('Não fazemos os registros.',
+                'Cuidado! Você mal consegue entender o que aconteceu no seu negócio. Não ter nenhum controle ou ter informações não realistas das entradas e saídas, incapacita a mínima gestão da capacidade de pagamento, fluxo de caixa e principalmente análise de resultado.',
+                1
+                )">Não fazemos os registros.</button>
               </div>
 
               <div class="form-check">
-                <button class="custom-button" (click)="next5('Mais ou menos... o valor da remuneração é fixo mas as retiradas acontecem conforme a necessidade.')">Mais ou menos... o valor da remuneração é fixo mas as retiradas acontecem conforme a necessidade.</button>
+                <button class="custom-button" 
+                (click)="next5('Nem todos os meses são feitos os registros, são `aleatórios`.',
+                'Cuidado! Você precisa ter o hábito do registro! Não ter  nenhum controle ou ter informações não realistas das entradas e saídas, incapacita a mínima gestão da capacidade de pagamento, fluxo de caixa e principalmente análise de resultado.',
+                2
+                )">Nem todos os meses são feitos os registros, são "aleatórios".</button>
               </div>
 
               <div class="form-check">
-                <button class="custom-button" (click)="next5('Mais ou menos… o pró-labore é pago em apenas uma data no mês mas seu valor varia segundo a necessidade do sócio.')">Mais ou menos… o pró-labore é pago em apenas uma data no mês mas seu valor varia segundo a necessidade do sócio.</button>
+                <button class="custom-button" 
+                (click)="next5('Pelo menos a cada quinze dias são feitos os registros.',
+                'Bacana saber que os lançamentos estão sendo feitos. Você consegue saber o que aconteceu com o seu caixa, sem perder dinheiro ao deixar prazos passarem. Porém, a atualização com mais agilidade dos registros, vai ajudar você enquanto gestor a analisar mais rápido o que está acontecendo, e agir!',
+                3
+                )">Pelo menos a cada quinze dias são feitos os registros.</button>
               </div>
 
               <div class="form-check">
-                <button class="custom-button" (click)="next5('Sim! O pró-labore é fixo em valor e data e qualquer retirada além do planejado é abatida no próximo mês.')">Sim! O pró-labore é fixo em valor e data e qualquer retirada além do planejado é abatida no próximo mês.</button>
+                <button class="custom-button" 
+                (click)="next5('Semanalmente são feitos todos os registros e conciliação.',
+                'Parabéns! Pouquissímas empresas Brasileiras que tem uma rotina de execução de financeiro semanal, e isso faz toda a diferença. A agilidade e acertividade nos registros, afetam diretamente a tomada de decisão.',
+                4
+                )">Semanalmente são feitos todos os registros e conciliação.</button>
               </div>
 
 
@@ -251,19 +279,35 @@
 
 
               <div class="form-check">
-                <button class="custom-button" (click)="next6('Não é feito o controle de entradas e saídas')">Não é feito o controle de entradas e saídas</button>
+                <button class="custom-button" 
+                (click)="next6('Não é feito o controle de entradas e saídas',
+                'Isso é um perigo! A loja que não controla nem a entrada nem a saída de dinheiro está a mercê da sorte. Implantar um sistema de controle é essencial.',
+                1
+                )">Não é feito o controle de entradas e saídas</button>
               </div>
 
               <div class="form-check">
-                <button class="custom-button" (click)="next6('Existe algum tipo de controle mas não se consegue ter exatidão de cada centavo que entrou e saiu.')">Existe algum tipo de controle mas não se consegue ter exatidão de cada centavo que entrou e saiu.</button>
+                <button class="custom-button" 
+                (click)="next6('Existe algum tipo de controle mas não se consegue ter exatidão de cada centavo que entrou e saiu.',
+                'Já ter algum controle é um bom começo, porém para visualizar de fato o que está acontecendo com o comércio, é preciso ter registro de todas as entradas e saídas de dinheiro.',
+                2
+                )">Existe algum tipo de controle mas não se consegue ter exatidão de cada centavo que entrou e saiu.</button>
               </div>
 
               <div class="form-check">
-                <button class="custom-button" (click)="next6('As entradas de dinheiro são controladas com exatidão, o faturamento é facilmente visualizado e acompanhado, porém as saídas de dinheiro não se tem a mesma clareza')">As entradas de dinheiro são controladas com exatidão, o faturamento é facilmente visualizado e acompanhado, porém as saídas de dinheiro não se tem a mesma clareza</button>
+                <button class="custom-button" 
+                (click)="next6('As entradas de dinheiro são controladas com exatidão, o faturamento é facilmente visualizado e acompanhado, porém as saídas de dinheiro não se tem a mesma clareza',
+                'Parabéns por já ter um controle bem feito das suas vendas. Mas não basta apenas cuidar da entrada de dinheiro. É muito importante se ter um controle completo também dos pagamentos.',
+                3
+                )">As entradas de dinheiro são controladas com exatidão, o faturamento é facilmente visualizado e acompanhado, porém as saídas de dinheiro não se tem a mesma clareza</button>
               </div>
 
               <div class="form-check">
-                <button class="custom-button" (click)="next6('A empresa consegue ter certeza de tudo que entrou e saiu.')">A empresa consegue ter certeza de tudo que entrou e saiu.</button>
+                <button class="custom-button" 
+                (click)="next6('A empresa consegue ter certeza de tudo que entrou e saiu.',
+                'Parabéns! Ter o controle de tudo que entrou na conta e tudo que saiu demonstra uma maturidade muito acima do mercado. ',
+                4
+                )">A empresa consegue ter certeza de tudo que entrou e saiu.</button>
               </div>
 
 
@@ -276,23 +320,39 @@
                 <img [src]="image7" alt="Minha Imagem" class="figurinha">
               </div>
 
-              <h2>A empresa consegue ter a previsão dos pagamentos e recebimentos para os próximos 90 dias?</h2>
+              <h2>A empresa  consegue ter a previsão dos pagamentos e recebimentos para os próximos 90 dias?</h2>
 
 
               <div class="form-check">
-                <button class="custom-button" (click)="next7('Não, não tenho nenhuma previsão, acompanhamos o saldo dia a dia.')">Não, não tenho nenhuma previsão, acompanhamos o saldo dia a dia.</button>
+                <button class="custom-button" 
+                (click)="next7('Não, não tenho nenhuma previsão, acompanhamos o saldo dia a dia.',
+                'Visualizar o que está previsto para acontecer em seu negócio é algo MUITO IMPORTANTE! A sua situação agora é a de um motorista que não dispõe de um sensor de combustível nem de quilometragem ao dirigir. Como saber quanto ainda resta de autonomia de viagem e a sua velocidade? ',
+                1
+                )">Não, não tenho nenhuma previsão, acompanhamos o saldo dia a dia.</button>
               </div>
 
               <div class="form-check">
-                <button class="custom-button" (click)="next7('Mais ou menos, tenho certa noção dos valores que irei receber.')">Mais ou menos, tenho certa noção dos valores que irei receber.</button>
+                <button class="custom-button" 
+                (click)="next7('Mais ou menos, tenho certa noção dos valores que irei receber.',
+                'É muito preocupante a ausência de um controle de caixa da empresa. O faturamento é somente um indicador de ego, acompanhar o caixa e o lucro dizem sobre a realidade da empresa de melhor forma.',
+                2
+                )">Mais ou menos, tenho certa noção dos valores que irei receber.</button>
               </div>
 
               <div class="form-check">
-                <button class="custom-button" (click)="next7('Mais ou menos, tenho o controle apenas dos pagamentos que irei fazer')">Mais ou menos, tenho o controle apenas dos pagamentos que irei fazer</button>
+                <button class="custom-button" 
+                (click)="next7('Mais ou menos, tenho o controle apenas dos pagamentos que irei fazer',
+                'Saber e acompanhar o caixa é importante, mas outro ponto sobre o qual preciso te alertar é sobre a necessidade de visualizar as projeções futuras. Saber o que está para acontecer em sua empresa nos próximos dias é algo essencial.',
+                3
+                )">Mais ou menos, tenho o controle apenas dos pagamentos que irei fazer</button>
               </div>
 
               <div class="form-check">
-                <button class="custom-button" (click)="next7('Sim, temos a previsibilidade a de contas a pagar e receber,bem como o saldo irá se comportar com essas transações.')">Sim, temos a previsibilidade a de contas a pagar e receber,bem como o saldo irá se comportar com essas transações.</button>
+                <button class="custom-button" 
+                (click)="next7('Sim, temos a previsibilidade a de contas a pagar e receber,bem como o saldo irá se comportar com essas transações.',
+                'Preciso te elogiar pelo controle financeiro e pela sua previsão. Como você consegue ter essa visualização, agora é estudar como fazer o seu dinheiro trabalhar para você para lhe proporcionar uma melhor rentabilidade!',
+                4
+                )">Sim, temos a previsibilidade a de contas a pagar e receber,bem como o saldo irá se comportar com essas transações.</button>
               </div>
 
 
@@ -309,19 +369,35 @@
 
 
               <div class="form-check">
-                <button class="custom-button" (click)="next8('Não, não há nenhum relatório de caixa nem acompanhamento, até as notas fiscais não são acompanhadas corretamente.')">Não, não há nenhum relatório de caixa nem acompanhamento, até as notas fiscais não são acompanhadas corretamente.</button>
+                <button class="custom-button" 
+                (click)="next8('Não, não há nenhum relatório de caixa nem acompanhamento, até as notas fiscais não são acompanhadas corretamente.',
+                'A ausência de controle financeiro é um ponto de extrema urgência. Esse momento talvez seja ideal para rever a relação com a contabilidade, pois o risco de inconformidade legal não pode ser negligenciado.',
+                1
+                )">Não, não há nenhum relatório de caixa nem acompanhamento, até as notas fiscais não são acompanhadas corretamente.</button>
               </div>
 
               <div class="form-check">
-                <button class="custom-button" (click)="next8('Não. Apenas o acompanhamento de emissão de notas fiscais em sistema é realizado.')">Não. Apenas o acompanhamento de emissão de notas fiscais em sistema é realizado.</button>
+                <button class="custom-button" 
+                (click)="next8('Não. Apenas o acompanhamento de emissão de notas fiscais em sistema é realizado.',
+                'A ausência de controle financeiro é um ponto alarmante. É indispensável que conheçamos os resultados financeiros diários e não apenas acompanhar as notas fiscais emitidas.',
+                2
+                )">Não. Apenas o acompanhamento de emissão de notas fiscais em sistema é realizado.</button>
               </div>
 
               <div class="form-check">
-                <button class="custom-button" (click)="next8('Sim, Há acompanhamento dos relatórios gerenciais. Entretanto, esses dados e indicadores gerados nos relatórios não são aproveitados para tomada de decisão.')">Sim, Há acompanhamento dos relatórios gerenciais. Entretanto, esses dados e indicadores gerados nos relatórios não são aproveitados para tomada de decisão.</button>
+                <button class="custom-button" 
+                (click)="next8('Sim, Há acompanhamento dos relatórios gerenciais. Entretanto, esses dados e indicadores gerados nos relatórios não são aproveitados para tomada de decisão.',
+                'Seus procesos financeiros já são razoáveis, visto que seus registros são suficientemnente bons para gerar demonstrativos. Porém, você precisa de ajuda na gestão, para utilizar os números na tomada de decisão.',
+                3
+                )">Sim, Há acompanhamento dos relatórios gerenciais. Entretanto, esses dados e indicadores gerados nos relatórios não são aproveitados para tomada de decisão.</button>
               </div>
 
               <div class="form-check">
-                <button class="custom-button" (click)="next8('Sim, há acompanhamento dos relatórios gerenciais e total suporte das tomadas de decisões apoiadas nos demonstrativos.')">Sim, há acompanhamento dos relatórios gerenciais e total suporte das tomadas de decisões apoiadas nos demonstrativos.</button>
+                <button class="custom-button" 
+                (click)="next8('Sim, há acompanhamento dos relatórios gerenciais e total suporte das tomadas de decisões apoiadas nos demonstrativos.',
+                'Sua empresa demonstra uma maturidade acima do mercado.  Simplesmente por utilizar relatórios gerenciais, sua empresa já possui uma maturidade em gestão acima do mercado.',
+                4
+                )">Sim, há acompanhamento dos relatórios gerenciais e total suporte das tomadas de decisões apoiadas nos demonstrativos.</button>
               </div>
 
 
@@ -338,19 +414,35 @@
 
 
               <div class="form-check">
-                <button class="custom-button" (click)="next9('Não tenho acesso aos demonstrativos da minha empresa.')">Não tenho acesso aos demonstrativos da minha empresa.</button>
+                <button class="custom-button" 
+                (click)="next9('Não tenho acesso aos demonstrativos da minha empresa.',
+                'Não ter os demonstrativos expressando a situação real da empresa ou não realizar os demonstrativos, é um péssimo sinal na saúde financeira da sua empresa. É muito importante saber como se comporta o lucro da sua empresa(Através da DRE),  bem como capacidade de pagamento (Através do Fluxo de Caixa)',
+                1
+                )">Não tenho acesso aos demonstrativos da minha empresa.</button>
               </div>
 
               <div class="form-check">
-                <button class="custom-button" (click)="next9('Os demonstrativos da minha empresa não condizem com a realidade e não são disponibilizadas essas informações.')">Os demonstrativos da minha empresa não condizem com a realidade e não são disponibilizadas essas informações.</button>
+                <button class="custom-button" 
+                (click)="next9('Os demonstrativos da minha empresa não condizem com a realidade e não são disponibilizadas essas informações.',
+                'E muito preocupante que não haja fidedignidade nos seus deonstrativos!  Entretanto, você peca em deixar de lado o seu fluxo de caixa e movimentação financeira diária. Você sabia que o que leva as empresas a falência é a má gestão do caixa e sua capacidade de pagamento?',
+                2
+                )">Os demonstrativos da minha empresa não condizem com a realidade e não são disponibilizadas essas informações.</button>
               </div>
 
               <div class="form-check">
-                <button class="custom-button" (click)="next9('Tenho os demonstrativos, mas não consigo visualizar as informações de forma automática, é preciso calcular.')">Tenho os demonstrativos, mas não consigo visualizar as informações de forma automática, é preciso calcular.</button>
+                <button class="custom-button" 
+                (click)="next9('Tenho os demonstrativos, mas não consigo visualizar as informações de forma automática, é preciso calcular.',
+                'É bacana acompanhar o Fluxo de Caixa e realizar os lançamentos no regime de caixa. Com isso, você sabe exatamente a movimentação financeira da sua empresa e o quanto que você consegue honrar no que tange aos compromissos financeiros.Entretanto, você peca em deixar de lado a sua  DRE  e estrutura de gastos com lucro da empresa. Como você sabe se a estratégia de precificação adotada, é saudável ao modelo de custos e estrutura da empresa, sem saber ao menos o quanto a empresa lucrou com os gastos e receitas do período?',
+                3
+                )">Tenho os demonstrativos, mas não consigo visualizar as informações de forma automática, é preciso calcular.</button>
               </div>
 
               <div class="form-check">
-                <button class="custom-button" (click)="next9('Consigo analisar o demonstrativo e todas essas informações de forma precisa e fácil.')">Consigo analisar o demonstrativo e todas essas informações de forma precisa e fácil.</button>
+                <button class="custom-button" 
+                (click)="next9('Consigo analisar o demonstrativo e todas essas informações de forma precisa e fácil.',
+                'Ótimo saber  que você sabe diferenciar regime de caixa e regime de competência e sabe gerar muito bem os principais demonstrativos que são o Fluxo de Caixa e DRE. Convém extrair alguns índices dos  demonstrativos  para tomar decisões. Vamos nessa?',
+                4
+                )">Consigo analisar o demonstrativo e todas essas informações de forma precisa e fácil.</button>
               </div>
 
 
@@ -367,19 +459,35 @@
 
 
               <div class="form-check">
-                <button class="custom-button" (click)="next10('Não, não há sequer informações úteis para isso.')">Não, não há sequer informações úteis para isso.</button>
+                <button class="custom-button" 
+                (click)="next10('Não, não há sequer informações úteis para isso.',
+                'Não produzir os insumos mínimos para gerar dashboards é bem ruim. As decisões precisam estar pautadas nos dados da empresa de forma sintética, resumida e  comparativa. Qualquer coisa fora disso, pode representar risco ao seu negócio.',
+                1
+                )">Não, não há sequer informações úteis para isso.</button>
               </div>
 
               <div class="form-check">
-                <button class="custom-button" (click)="next10('Não. Há apenas informações financeiras, mas sem dashboards e gráficos para tomada de decisões.')">Não. Há apenas informações financeiras, mas sem dashboards e gráficos para tomada de decisões.</button>
+                <button class="custom-button" 
+                (click)="next10('Não. Há apenas informações financeiras, mas sem dashboards e gráficos para tomada de decisões.',
+                'É bacana você ter informações financeiras, entretanto, o suporte  as finanças fica prejudicado pela ausência de gráficos, colunas, dashboards e comparações mais profundas',
+                2
+                )">Não. Há apenas informações financeiras, mas sem dashboards e gráficos para tomada de decisões.</button>
               </div>
 
               <div class="form-check">
-                <button class="custom-button" (click)="next10('Sim, há informações de alguns gráficos, sem dashboards e que são atualizados periodicamente, manualmente sem automatização.')">Sim, há informações de alguns gráficos, sem dashboards e que são atualizados periodicamente, manualmente sem automatização.</button>
+                <button class="custom-button" 
+                (click)="next10('Sim, há informações de alguns gráficos, sem dashboards e que são atualizados periodicamente, manualmente sem automatização.',
+                'Parabéns pela tomada de decisão ajustada baseada em gráficos, colunas e dashboards! Entretanto automatizar esses dados é o ideal. Bem como obter um belo dashboard.',
+                3
+                )">Sim, há informações de alguns gráficos, sem dashboards e que são atualizados periodicamente, manualmente sem automatização.</button>
               </div>
 
               <div class="form-check">
-                <button class="custom-button" (click)="next10('Sim, há informações de gráficos e dashboards, com links atualizados em tempo real de acordo com alterações de receitas e despesas.')">Sim, há informações de gráficos e dashboards, com links atualizados em tempo real de acordo com alterações de receitas e despesas.</button>
+                <button class="custom-button" 
+                (click)="next10('Sim, há informações de gráficos e dashboards, com links atualizados em tempo real de acordo com alterações de receitas e despesas.',
+                'Parabéns! Você está no mais alto nível no que diz respeito a tomada de decisões. É essencial termos gráficos, colunas e dashboards para nos ajudar a ter decisões pautadas na realidade do negócio. E ainda atualizadas a todo instante é bem legal.',
+                4
+                )">Sim, há informações de gráficos e dashboards, com links atualizados em tempo real de acordo com alterações de receitas e despesas.</button>
               </div>
 
 
@@ -396,19 +504,35 @@
 
 
               <div class="form-check">
-                <button class="custom-button" (click)="next11('Não, nem sabemos dos resultados financeiros.')">Não, nem sabemos dos resultados financeiros.</button>
+                <button class="custom-button" 
+                (click)="next11('Não, nem sabemos dos resultados financeiros.',
+                'Não obter dados para pensar na estratégia da empresa é desesperador. Afinal,o feeling empresarial pode te falir. É importante realizar uma análise detalhada da estratégia adotada, baseada nos seus resultados financeiros.',
+                1
+                )">Não, nem sabemos dos resultados financeiros.</button>
               </div>
 
               <div class="form-check">
-                <button class="custom-button" (click)="next11('De certo modo, apesar de não ter muito tempo acompanho o caixa, quanto sobra na conta e etc.')">De certo modo, apesar de não ter muito tempo acompanho o caixa, quanto sobra na conta e etc.</button>
+                <button class="custom-button" 
+                (click)="next11('De certo modo, apesar de não ter muito tempo acompanho o caixa, quanto sobra na conta e etc.',
+                'Acompanhar o caixa e a conta corrente da sua empresa é bem importante, pois é de lá que saem os recursos financeiros. Entretanto, Não é o suficiente. Pois, não rever os resultados financeiros é não saber se a estratégia da empresa está surtindo efeito.',
+                2
+                )">De certo modo, apesar de não ter muito tempo acompanho o caixa, quanto sobra na conta e etc.</button>
               </div>
 
               <div class="form-check">
-                <button class="custom-button" (click)="next11('Sim, acompanhamos os resultados na DRE e Fluxo de caixa.')">Sim, acompanhamos os resultados na DRE e Fluxo de caixa.</button>
+                <button class="custom-button" 
+                (click)="next11('Sim, acompanhamos os resultados na DRE e Fluxo de caixa.',
+                'Ter uma DRE e Fluxo de caixa é o primeiro passo para a gestão financeira. Entretanto, há indicadores que apoiados nessas demosntrações, medem endividamento, capacidade de pagamento, custos etc que auxiliam melhor suas decisões.',
+                3
+                )">Sim, acompanhamos os resultados na DRE e Fluxo de caixa.</button>
               </div>
 
               <div class="form-check">
-                <button class="custom-button" (click)="next11('Sim, e é acompanhada de KPIS, métricas e indicadores que ajudem na tomada de decisão para o processo de melhoria constante.')">Sim, e é acompanhada de KPI'S, métricas e indicadores que ajudem na tomada de decisão para o processo de melhoria constante.</button>
+                <button class="custom-button" 
+                (click)="next11('Sim, e é acompanhada de KPIS, métricas e indicadores que ajudem na tomada de decisão para o processo de melhoria constante.',
+                'No que se refere a análise de indicadores, está tudo ótimo com o seu negócio. Estratégias lastreadas por seus resultados, é um porto seguro no que diz respeito eu planejamento financeiro',
+                4
+                )">Sim, e é acompanhada de KPI'S, métricas e indicadores que ajudem na tomada de decisão para o processo de melhoria constante.</button>
               </div>
 
 
@@ -425,19 +549,35 @@
 
 
               <div class="form-check">
-                <button class="custom-button" (click)="next12('Não são feitas análises financeiras no negócio.')">Não são feitas análises financeiras no negócio.</button>
+                <button class="custom-button" 
+                (click)="next12('Não são feitas análises financeiras no negócio.',
+                'Analisar os dados do Comércio é uma das melhores formas de entender a situação da organização e compreender como está a saúde do negócio.',
+                1
+                )">Não são feitas análises financeiras no negócio.</button>
               </div>
 
               <div class="form-check">
-                <button class="custom-button" (click)="next12('Até existe a vontade de analisar os resultados, porém não existem controle dos dados para geração de informação.')">Até existe a vontade de analisar os resultados, porém não existem controle dos dados para geração de informação.</button>
+                <button class="custom-button" 
+                (click)="next12('Até existe a vontade de analisar os resultados, porém não existem controle dos dados para geração de informação.',
+                'Ter a vontade de analisar os dados já é um ponto muito positivo. Mas é preciso organizar o seu financeiro, registrar todas as informações e transações, para ter bons demonstrativos que gerarão boas análises.',
+                2
+                )">Até existe a vontade de analisar os resultados, porém não existem controle dos dados para geração de informação.</button>
               </div>
 
               <div class="form-check">
-                <button class="custom-button" (click)="next12('São feitas análises mas não são traçadas ações de melhorias.')">São feitas análises mas não são traçadas ações de melhorias.</button>
+                <button class="custom-button" 
+                (click)="next12('São feitas análises mas não são traçadas ações de melhorias.',
+                'Do que adianta analisar os resultados ai do seu comércio se você não direiciona um plano? Pensamentos sem ações ou plano de ação não te ajudam a atingir o resultado desejado.',
+                3
+                )">São feitas análises mas não são traçadas ações de melhorias.</button>
               </div>
 
               <div class="form-check">
-                <button class="custom-button" (click)="next12('Mensalmente são traçadas ações de melhorias baseado nas análises de resultado do negócio.')">Mensalmente são traçadas ações de melhorias baseado nas análises de resultado do negócio.</button>
+                <button class="custom-button" 
+                (click)="next12('Mensalmente são traçadas ações de melhorias baseado nas análises de resultado do negócio.',
+                'Parabéns! Analisar os dados do negócio, realizar ações de melhorias de forma frequente é o melhor dos mundos. Você é um Gestor Financeiro atuante.',
+                4
+                )">Mensalmente são traçadas ações de melhorias baseado nas análises de resultado do negócio.</button>
               </div>
 
 
@@ -454,19 +594,35 @@
 
 
               <div class="form-check">
-                <button class="custom-button" (click)="next13('Não. Sequer existem metas ou indicadores na minha empresa.')">Não. Sequer existem metas ou indicadores na minha empresa.</button>
+                <button class="custom-button" 
+                (click)="next13('Não. Sequer existem metas ou indicadores na minha empresa.',
+                'A ausência de indicadores e metas é o pior cenário para a sua empresa. Tomar atitudes relacionadas as próximas tarefas no feeling empresarial é um perigo. Cuidado para não ser traído por suas convicções',
+                1
+                )">Não. Sequer existem metas ou indicadores na minha empresa.</button>
               </div>
 
               <div class="form-check">
-                <button class="custom-button" (click)="next13('Em partes. Metas são realizadas no feeling empresarial, porém sem relação direta com indicadores e há dificuldades nos planos de ações de melhoria.')">Em partes. Metas são realizadas no 'feeling empresarial', porém sem relação direta com indicadores e há dificuldades nos planos de ações de melhoria.</button>
+                <button class="custom-button" 
+                (click)="next13('Em partes. Metas são realizadas no feeling empresarial, porém sem relação direta com indicadores e há dificuldades nos planos de ações de melhoria.',
+                'Metas realizadas sem parâmetro real é um cenário perigoso. Devemos padroniza-las de acordo com o cenário da empresa. O feeling empresarial ignora muitas vezes o cenário financeiro da empresa ao tomar decisões',
+                2
+                )">Em partes. Metas são realizadas no 'feeling empresarial', porém sem relação direta com indicadores e há dificuldades nos planos de ações de melhoria.</button>
               </div>
 
               <div class="form-check">
-                <button class="custom-button" (click)="next13('De certo modo sim , metas são lastreadas em um planejamento estratégico,entretanto há dificuldades com plano de ações para melhoria.')">De certo modo sim , metas são lastreadas em um planejamento estratégico,entretanto há dificuldades com plano de ações para melhoria.</button>
+                <button class="custom-button" 
+                (click)="next13('De certo modo sim , metas são lastreadas em um planejamento estratégico, entretanto há dificuldades com plano de ações para melhoria.',
+                'Lastrear métricas e relacionar com um planejamento estratégico é um cenário estável. Entretanto, a fim de performar ainda melhor e não ser engolido pelo mercado, convém acompanhar resultados e implementar ciclos de melhoria contínua.',
+                3
+                )">De certo modo sim , metas são lastreadas em um planejamento estratégico,entretanto há dificuldades com plano de ações para melhoria.</button>
               </div>
 
               <div class="form-check">
-                <button class="custom-button" (click)="next13('Sim, bem como são feitas e acompanhadas em um planejamento estratégico que norteia toda a empresa,incluindo um plano de melhoria contínuo.')">Sim, bem como são feitas e acompanhadas em um planejamento estratégico que norteia toda a empresa,incluindo um plano de melhoria contínuo.</button>
+                <button class="custom-button" 
+                (click)="next13('Sim, bem como são feitas e acompanhadas em um planejamento estratégico que norteia toda a empresa,incluindo um plano de melhoria contínuo.',
+                'Melhorias contínuas relacionadas com realidade da empresa, é o melhor cenário. São poucas empresas que tem o privilégio de desfrutar de um planejamento estratégico desses.',
+                4
+                )">Sim, bem como são feitas e acompanhadas em um planejamento estratégico que norteia toda a empresa,incluindo um plano de melhoria contínuo.</button>
               </div>
 
 
@@ -483,19 +639,35 @@
 
 
               <div class="form-check">
-                <button class="custom-button" (click)="next14('Não sei o que é e nem como calcular o Ponto de Equilíbrio.')">Não sei o que é e nem como calcular o Ponto de Equilíbrio.</button>
+                <button class="custom-button" 
+                (click)="next14('Não sei o que é e nem como calcular o Ponto de Equilíbrio.',
+                'O ponto de equilíbrio é um indicador de segurança do negócio, pois mostra o quanto é necessário vender para que as receitas se igualem aos custos. O ponto de equilíbrio é uma importante ferramenta de gestão financeira para identificar o volume mínimo de faturamento necessário para não haver prejuízos',
+                1
+                )">Não sei o que é e nem como calcular o Ponto de Equilíbrio.</button>
               </div>
 
               <div class="form-check">
-                <button class="custom-button" (click)="next14('Conheço o conceito, porém não sei como calcular.')">Conheço o conceito, porém não sei como calcular.</button>
+                <button class="custom-button" 
+                (click)="next14('Conheço o conceito, porém não sei como calcular.',
+                'Você precisa aprender a calcular para identificar o volume mínimo de faturamento necessário para não haver prejuízos. Qual a sua meta de vendas se você não sabe nem o ponto de equilbrio?',
+                2
+                )">Conheço o conceito, porém não sei como calcular.</button>
               </div>
 
               <div class="form-check">
-                <button class="custom-button" (click)="next14('Conheço o conceito, como calcular mas não faço.')">Conheço o conceito, como calcular mas não faço.</button>
+                <button class="custom-button" 
+                (click)="next14('Conheço o conceito, como calcular mas não faço.',
+                'Você tá vacilando né? Você entende o conceito, a importância, sabe como fazer mas não faz... Qual a sua meta de vendas hoje, como saber se você está operando acima do ponto de equilibrio se você não faz esse cálculo? Posso te ajudar com isso.',
+                3
+                )">Conheço o conceito, como calcular mas não faço.</button>
               </div>
 
               <div class="form-check">
-                <button class="custom-button" (click)="next14('Sei exatamente o Ponto de Equilíbrio da minha empresa.')">Sei exatamente o Ponto de Equilíbrio da minha empresa.</button>
+                <button class="custom-button" 
+                (click)="next14('Sei exatamente o Ponto de Equilíbrio da minha empresa.',
+                'Parabéns!! Ter o valor do ponto de equilibrio é muito importante, que tal colocar uma meta mensal com o time de quando ultrapassar o ponto de equilbrio comemorar?',
+                4
+                )">Sei exatamente o Ponto de Equilíbrio da minha empresa.</button>
               </div>
 
 
@@ -512,19 +684,35 @@
 
 
               <div class="form-check">
-                <button class="custom-button" (click)="next15('Não faço nenhum cálculo, sigo o preço do mercado, baseado na concorrência.')">Não faço nenhum cálculo, sigo o preço do mercado, baseado na concorrência.</button>
+                <button class="custom-button" 
+                (click)="next15('Não faço nenhum cálculo, sigo o preço do mercado, baseado na concorrência.',
+                'O Comerciante que copia o preço da concorrência fica sempre um passo atrás, ficando refém das estratégias dos outros, além de que cada empresa tem a sua estrutura, seus custos, não podendo jamais copiar apenas o preço da concorrência sem analisar os seus números.',
+                1
+                )">Não faço nenhum cálculo, sigo o preço do mercado, baseado na concorrência.</button>
               </div>
 
               <div class="form-check">
-                <button class="custom-button" (click)="next15('Multiplico o Custo por um número x de vezes.')">Multiplico o Custo por um número x de vezes.</button>
+                <button class="custom-button" 
+                (click)="next15('Multiplico o Custo por um número x de vezes.',
+                'Cuidado! O Markup, que é o famoso multiplicar por x vezes, é uma ferramenta de precificação bastante utilizada por ser rápida e prática, porém não se pode multiplicar todos os produtos de forma aleatória, tendo em vista que cada produto, cada região, cada empresa tem uma realidade diferente.',
+                2
+                )">Multiplico o Custo por um número x de vezes.</button>
               </div>
 
               <div class="form-check">
-                <button class="custom-button" (click)="next15('Utilizo uma planilha e o resultado é o preço.')">Utilizo uma planilha e o resultado é o preço.</button>
+                <button class="custom-button" 
+                (click)="next15('Utilizo uma planilha e o resultado é o preço.',
+                'Muito bom você já utilizar uma ferramenta de precificação! Mas não dá para apenas pegar o resultado gerado por uma ferramenta e simplesmente colocar esse preço no produto. É preciso fazer uma análise comparativa com o mercado, analisar margem e volume de vendas para realizar constantes ajustes lucrativos.',
+                3
+                )">Utilizo uma planilha e o resultado é o preço.</button>
               </div>
 
               <div class="form-check">
-                <button class="custom-button" (click)="next15('Utilizo uma ferramenta de precificação, e faço análises após o resultado.')">Utilizo uma ferramenta de precificação, e faço análises após o resultado.</button>
+                <button class="custom-button" 
+                (click)="next15('Utilizo uma ferramenta de precificação, e faço análises após o resultado.',
+                'Parabéns! Um bom gestor financeiro tem domínio do preço de todos os seus produtos através de uma ferramenta de precificação para ajudar nos calculos, mas também analisa o mercado, mix de produtos, volume de vendas e está a todo tempo buscando otimizar o lucro gerado através do preço praticado.',
+                4
+                )">Utilizo uma ferramenta de precificação, e faço análises após o resultado.</button>
               </div>
 
 
@@ -541,19 +729,35 @@
 
 
               <div class="form-check">
-                <button class="custom-button" (click)="next16('Não sei o que significa Margem de Contribuição.')">Não sei o que significa Margem de Contribuição.</button>
+                <button class="custom-button" 
+                (click)="next16('Não sei o que significa Margem de Contribuição.',
+                'Olha... a Margem de Contribuição é um dos indicadores mais importantes para um comércio. É muito importante ter conhecimento da margem de contribuição de cada produto do seu mix como também a margem média geral.',
+                1
+                )">Não sei o que significa Margem de Contribuição.</button>
               </div>
 
               <div class="form-check">
-                <button class="custom-button" (click)="next16('Até conheço o conceito de Margem de Contribuição, mas não tenho ideia de como calcular.')">Até conheço o conceito de Margem de Contribuição, mas não tenho ideia de como calcular.</button>
+                <button class="custom-button" 
+                (click)="next16('Até conheço o conceito de Margem de Contribuição, mas não tenho ideia de como calcular.',
+                'A Margem de Contribuição é um dos principais indicadores de um Comércio. Você além de conhecer o conceito, precisa ter de forma muito clara a sua margem de contribuição média do seu mix e por produto. Isso vai te ajudar a ter muito mais resultado',
+                2
+                )">Até conheço o conceito de Margem de Contribuição, mas não tenho ideia de como calcular.</button>
               </div>
 
               <div class="form-check">
-                <button class="custom-button" (click)="next16('Até conheço o conceito de Margem de Contribuição, mas não faço para todos os produtos, então não tenho a % de margem média.')">Até conheço o conceito de Margem de Contribuição, mas não faço para todos os produtos, então não tenho a % de margem média.</button>
+                <button class="custom-button" 
+                (click)="next16('Até conheço o conceito de Margem de Contribuição, mas não faço para todos os produtos, então não tenho a % de margem média.',
+                'Realmente ter uma análise de margem de todos os produtos e média geral da empresa não é fácil, mas essa clareza com certeza irá te trazer ótimos resultados.',
+                3
+                )">Até conheço o conceito de Margem de Contribuição, mas não faço para todos os produtos, então não tenho a % de margem média.</button>
               </div>
 
               <div class="form-check">
-                <button class="custom-button" (click)="next16('Sim, sei exatamente qual é minha %MC média.')">Sim, sei exatamente qual é minha %MC média.</button>
+                <button class="custom-button" 
+                (click)="next16('Sim, sei exatamente qual é minha %MC média.',
+                'Parabéns! Você é realmente diferenciado! Pouquíssimos comerciantes tem essa clareza e dominam a margem de contribuição. Isso te da uma segurança no momento de realizar descontos, fazer combos e nunca precificar errado.',
+                4
+                )">Sim, sei exatamente qual é minha %MC média.</button>
               </div>
 
 
@@ -570,19 +774,35 @@
 
 
               <div class="form-check">
-                <button class="custom-button" (click)="next17('Não, meu preço é calculado apenas pelo valor da concorrência,afinal não posso ficar atrás do meu concorrente na guerra de preços.')">Não, meu preço é calculado apenas pelo valor da concorrência,afinal não posso ficar atrás do meu concorrente na guerra de preços.</button>
+                <button class="custom-button" 
+                (click)="next17('Não, meu preço é calculado apenas pelo valor da concorrência,afinal não posso ficar atrás do meu concorrente na guerra de preços.',
+                'Se basear pelo preço de mercado é um erro que muitos empreendedores cometem... Seu concorrente, certamente tem uma estrutura de custos e capital de giro diferente da sua, podendo resistir melhor a uma baixa de mercado.',
+                1
+                )">Não, meu preço é calculado apenas pelo valor da concorrência,afinal não posso ficar atrás do meu concorrente na guerra de preços.</button>
               </div>
 
               <div class="form-check">
-                <button class="custom-button" (click)="next17('Acho que sim, adiciono sempre um percentual de lucro em relação ao valor pago do preço unitário.')">Acho que sim, adiciono sempre um percentual de lucro em relação ao valor pago do preço unitário.</button>
+                <button class="custom-button" 
+                (click)="next17('Acho que sim, adiciono sempre um percentual de lucro em relação ao valor pago do preço unitário.',
+                'É bacana adicionar uma margem sobre o preço de compra. Entretanto,isso não é garantia que seus preços estão adequados. Relacionar volume de vendas, com a estrutura de gastos do negócio é o melhor caminho!',
+                2
+                )">Acho que sim, adiciono sempre um percentual de lucro em relação ao valor pago do preço unitário.</button>
               </div>
 
               <div class="form-check">
-                <button class="custom-button" (click)="next17('De certo modo sim, é analisada a aceitação do mercado em relação a cada produto e a contribuição do lucro em cada produto.')">De certo modo sim, é analisada a aceitação do mercado em relação a cada produto e a contribuição do lucro em cada produto.</button>
+                <button class="custom-button" 
+                (click)="next17('De certo modo sim, é analisada a aceitação do mercado em relação a cada produto e a contribuição do lucro em cada produto.',
+                'Olhar a aceitação de mercado é bem importante para precificar, mas não é suficiente.Um produto deve estar lastreado nos gastos fixos, variáveis e sua margem de lucro desejada. Esse fato, somado a aceitação de mercado como ancoragem, irá lhe trazer segurança financeira. ',
+                3
+                )">De certo modo sim, é analisada a aceitação do mercado em relação a cada produto e a contribuição do lucro em cada produto.</button>
               </div>
 
               <div class="form-check">
-                <button class="custom-button" (click)="next17('Sim, é aplicado a fórmula de marcação do preço, levando em conta gastos fixos, gastos variáveis e a margem de lucro desejada sobre o produto. Auxiliando assim, as novas compras e produções, realização de promoções etc.')">Sim, é aplicado a fórmula de marcação do preço, levando em conta gastos fixos, gastos variáveis e a margem de lucro desejada sobre o produto. Auxiliando assim, as novas compras e produções, realização de promoções etc.</button>
+                <button class="custom-button" 
+                (click)="next17('Sim, é aplicado a fórmula de marcação do preço, levando em conta gastos fixos, gastos variáveis e a margem de lucro desejada sobre o produto. Auxiliando assim, as novas compras e produções, realização de promoções etc.',
+                'Lastrear seu preço incluindo a taxa de marcação é o  melhor dos mundos da precificação. Incluir no seu preço gastos fixos, variáveis e lucro desejado é o caminho que irá levar você a ter o controle total da sua empresa.',
+                4
+                )">Sim, é aplicado a fórmula de marcação do preço, levando em conta gastos fixos, gastos variáveis e a margem de lucro desejada sobre o produto. Auxiliando assim, as novas compras e produções, realização de promoções etc.</button>
               </div>
 
 
@@ -599,19 +819,35 @@
 
 
               <div class="form-check">
-                <button class="custom-button" (click)="next18('Constatemente estamos no cheque especial e atrasando pagamentos.')">Constatemente estamos no cheque especial e atrasando pagamentos.</button>
+                <button class="custom-button" 
+                (click)="next18('Constatemente estamos no cheque especial e atrasando pagamentos.',
+                'Cuidado! Sua empresa está respirando por aparelhos e esse é um problema bem delicado de ser tratado. Em resumo, deve-se analisar o potencial da empresa gerar lucro atraves da Análise CVL (Custo Volume Lucro), bem como a capacidade de pagamento pelo Fluxo de Caixa , ajustando prazos de recebimentos e pagamentos para honrar os compromissos assumidos.',
+                1
+                )">Constatemente estamos no cheque especial e atrasando pagamentos.</button>
               </div>
 
               <div class="form-check">
-                <button class="custom-button" (click)="next18('As vezes atrasamos uma conta ou entramos no cheque especial.')">As vezes atrasamos uma conta ou entramos no cheque especial.</button>
+                <button class="custom-button" 
+                (click)="next18('As vezes atrasamos uma conta ou entramos no cheque especial.',
+                'Cuidado! Isso indica disfunções financeiras na sua empresa. Em resumo, deve-se analisar o potencial da empresa gerar lucro atraves da Análise CVL (Custo Volume Lucro), bem como a capacidade de pagamento pelo Fluxo de Caixa , ajustando prazos de recebimentos e pagamentos para honrar os compromissos assumidos.',
+                2
+                )">As vezes atrasamos uma conta ou entramos no cheque especial.</button>
               </div>
 
               <div class="form-check">
-                <button class="custom-button" (click)="next18('Praticamente nunca entramos no cheque especial ou atrasamos contas.')">Praticamente nunca entramos no cheque especial ou atrasamos contas.</button>
+                <button class="custom-button" 
+                (click)="next18('Praticamente nunca entramos no cheque especial ou atrasamos contas.',
+                'É louvável ter uma boa constância nos pagamentos, entretanto sua empresa parece estar um pouco vulnerável em algumas situações, como pessoas que tem um sistema imunológico fraco! Em resumo, deve-se analisar o potencial da empresa gerar lucro atraves da Análise CVL (Custo Volume Lucro), bem como a capacidade de pagamento pelo Fluxo de Caixa , ajustando prazos de recebimentos e pagamentos, para honrar os compromissos assumidos',
+                3
+                )">Praticamente nunca entramos no cheque especial ou atrasamos contas.</button>
               </div>
 
               <div class="form-check">
-                <button class="custom-button" (click)="next18('Nunca entramos no cheque especial ou atrasamos uma conta.')">Nunca entramos no cheque especial ou atrasamos uma conta.</button>
+                <button class="custom-button" 
+                (click)="next18('Nunca entramos no cheque especial ou atrasamos uma conta.',
+                'Parabéns por nunca ter atrasado um pagamento! Provavelmente sua empresa tem uma grande reserva em caixa, negócio potencial gerador de caixa ou bem lucrativo!',
+                4
+                )">Nunca entramos no cheque especial ou atrasamos uma conta.</button>
               </div>
 
 
@@ -628,19 +864,35 @@
 
 
               <div class="form-check">
-                <button class="custom-button" (click)="next19('Possuí  empréstimos que somam mais que três meses de faturamento do negócio.')">Possuí  empréstimos que somam mais que três meses de faturamento do negócio.</button>
+                <button class="custom-button" 
+                (click)="next19('Possuí  empréstimos que somam mais que três meses de faturamento do negócio.',
+                'Cuidado com esses empréstimos. Eles estão sendo utiilizados para cobrir furo de caixa ou para realizar novos investimentos? A depender da estratégia se endividar com empréstimos pode levar o negócio a falência.',
+                1
+                )">Possuí  empréstimos que somam mais que três meses de faturamento do negócio.</button>
               </div>
 
               <div class="form-check">
-                <button class="custom-button" (click)="next19('Possuí alguns empréstimos que somam menos que três meses de faturamento do negócio.')">Possuí alguns empréstimos que somam menos que três meses de faturamento do negócio.</button>
+                <button class="custom-button" 
+                (click)="next19('Possuí alguns empréstimos que somam menos que três meses de faturamento do negócio.',
+                'Cuidado com esses empréstimos, eles podem levar o negócio da falência ao crescimento exponencial. ',
+                2
+                )">Possuí alguns empréstimos que somam menos que três meses de faturamento do negócio.</button>
               </div>
 
               <div class="form-check">
-                <button class="custom-button" (click)="next19('No momento não tem mas utilizou nos últimos meses.')">No momento não tem mas utilizou nos últimos meses.</button>
+                <button class="custom-button" 
+                (click)="next19('No momento não tem mas utilizou nos últimos meses.',
+                'Ter contraído empréstimos não significa que o negócio está com problemas financeiros, mas sem dúvidas, não ter empréstimos e operar com o próprio capital é um sinal de saúde financeira.',
+                3
+                )">No momento não tem mas utilizou nos últimos meses.</button>
               </div>
 
               <div class="form-check">
-                <button class="custom-button" (click)="next19('Não possuí nenhum empréstimo e nem precisou nos últimos meses.')">Não possuí nenhum empréstimo e nem precisou nos últimos meses.</button>
+                <button class="custom-button" 
+                (click)="next19('Não possuí nenhum empréstimo e nem precisou nos últimos meses.',
+                'Parabéns por não ter tido a necessidade financeira de recorrer a empréstimos. Operar com capital próprio e com o rendimento do negócio é o melhor dos casos.',
+                4
+                )">Não possuí nenhum empréstimo e nem precisou nos últimos meses.</button>
               </div>
 
 
@@ -657,19 +909,34 @@
 
 
               <div class="form-check">
-                <button class="custom-button" (click)="next20('Menos que 1 Mes.')">Menos que 1 Mes.</button>
+                <button class="custom-button" 
+                (click)="next20('Menos que 1 Mes.',
+                'Cuidado! Não sabemos o dia de amanhã. A pandemia veio para nos mostrar  que precisamos sim de uma reserva de caixa. Convém ajustar o ciclo operacional, baseado no contas a pagar e a receber e já pensar na necessidade de capital de giro baseada  no ciclo operacional da empresa. Não se pode distribuir todo o lucro da empresa e deixar ela sem nenhuma reserva, importante pensar nesse assunto.',
+                1)">Menos que 1 Mes.</button>
               </div>
 
               <div class="form-check">
-                <button class="custom-button" (click)="next20('Entre 1 e 3 Meses.')">Entre 1 e 3 Meses.</button>
+                <button class="custom-button" 
+                (click)="next20('Entre 1 e 3 Meses.',
+                'Cuidado! Não sabemos o dia de amanhã.A pandemia veio para nos mostrar  que precisamos sim de uma reserva de caixa muito bem estruturada!nApesar de você já ter uma reserva para um certo tempo, será que essa reserva é suficiente para cobrir as operações da empresa? Apesar de você já ter uma reserva para um certo tempo, será que essa reserva é suficiente para cobrir as operações da empresa? Convém ajustar o ciclo operacional, baseado no contas a pagar e a receber e já pensar na necessidade de capital de giro baseada  no ciclo operacional da empresa.',
+                2
+                )">Entre 1 e 3 Meses.</button>
               </div>
 
               <div class="form-check">
-                <button class="custom-button" (click)="next20('Entre 4 e 6 meses.')">Entre 4 e 6 meses.</button>
+                <button class="custom-button" 
+                (click)="next20('Entre 4 e 6 meses.',
+                'Parabéns por ter um tempo razoável de capital de giro! Mas será que seria necessário todo esse tempo? A necessidadede capital de giro (NCG) deve atender ao seu ciclo de operações! Esse número pode estar superestimado ou ainda subestimado a depender do seu ciclo operacional. ',
+                3
+                )">Entre 4 e 6 meses.</button>
               </div>
 
               <div class="form-check">
-                <button class="custom-button" (click)="next20('Acima de 6 meses.')">Acima de 6 meses.</button>
+                <button class="custom-button" 
+                (click)="next20('Acima de 6 meses.',
+                'Parabéns por ter 6 meses de gastos pagos! São poucos empreendedores que tem esse privilégio! Manter no mínimo 6 meses de resevas para garantir a continuidade das operações durante momentos de crise, como a pandemia do Covid, é MUITO importante!',
+                4
+                )">Acima de 6 meses.</button>
               </div>
 
         </div>

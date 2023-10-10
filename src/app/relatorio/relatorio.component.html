@@ -16,7 +16,7 @@
                     <mat-form-field>
                         <mat-label>Empresa escolhida</mat-label>
                         <mat-select [(ngModel)]="empresaescolhida" name="food">
-                          <mat-option *ngFor="let empresa of empresas" [value]="empresa">
+                          <mat-option *ngFor="let empresa of empresas" [value]="empresa" (click)="mudarempresa()">
                             {{ empresa }}
                           </mat-option>
                         </mat-select>
@@ -36,112 +36,283 @@
     <div class="relatorio" *ngIf="relatorio">
 
         <div class="sub-menu">
-          <button class="custom-button" color="primary" (click)="voltar()">Voltar</button>
+          <button class="custom-button" color="primary" (click)="voltar()"                 >Voltar</button>
+          <button class="custom-button" color="primary" (click)="todas()"                  >Perguntas e respostas</button>
+          <button class="custom-button" color="primary" (click)="somenteorganizacao()"     >1. Organização</button>
+          <button class="custom-button" color="primary" (click)="somentedemonstrativos()"  >2. Demonstrativos</button>
+          <button class="custom-button" color="primary" (click)="somenteanalises()"        >3. Análises</button>
+          <button class="custom-button" color="primary" (click)="somenteprecificacao()"    >4. Precificação</button>
+          <button class="custom-button" color="primary" (click)="somenteseguranca()"       >5. Segurança</button>
+          <button class="custom-button" color="primary" (click)="somentediagnostico()"     >6. Diagnóstico</button>
+          <button class="custom-button" color="primary" (click)="somentegraficos()"        >7. Dashboard</button>
         </div>
 
-        <table class="table table-bordered">
+        <div class="sub-menu">
+          <button class="custom-button-red" color="primary" (click)="generatePDF()"        >Gerar PDF</button>
+        </div>
+
+
+        <!-- TABELAS -->
+        <div id="content">
+          <table class="table table-bordered" *ngIf="diagnostico == false">
 
             <thead>
               <tr>
+                <th colspan="5" class="center fixed precision-color text-white"><h1>{{ empresaescolhida }} - {{ cnpj }}</h1></th>
+              </tr>
+              <tr *ngIf="dashboard == false">
                 <th class="center fixed "><h2>Setor</h2></th>
                 <th class="center fixed "><h2>Perguntas</h2></th>
                 <th class="center fixed "><h2>Respostas</h2></th>
                 <th class="center fixed "><h2>Feedback Personalizado</h2></th>
+                <th class="center fixed "><h2>Importância da pergunta</h2></th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr *ngIf="perguntaserespostas || organizacao">
+                <td rowspan="3"><h3>Separação das Finanças</h3></td>
+                <td><h3>A empresa possuí conta bancária pessoa jurídica e utiliza ela SOMENTE para pagamentos e recebimentos da empresa?</h3></td>
+                <td><h3>{{ Resposta1 }}</h3></td>
+                <td><h3>{{ Feedback1 }}</h3></td>
+                <td class="importante-color"><h3>Importante</h3></td>
+              </tr>
+              <tr *ngIf="perguntaserespostas || organizacao">
+                <td><h3>Os sócios recebem um pró-labore fixo todo mês (ou seja, recebem um salário assim como todos os demais funcionários)?</h3></td>
+                <td><h3>{{ Resposta2 }}</h3></td>
+                <td><h3>{{ Feedback2 }}</h3></td>
+                <td class="importante-color"><h3>Importante</h3></td>
+              </tr>
+              <tr *ngIf="perguntaserespostas || organizacao">
+                <td><h3>Existem hoje dentro das contas pagas pela empresa contas pessoais dos sócios?</h3></td>
+                <td><h3>{{ Resposta3 }}</h3></td>
+                <td><h3>{{ Feedback3 }}</h3></td>
+                <td class="importante-color"><h3>Importante</h3></td>
+              </tr>
+              <tr *ngIf="perguntaserespostas || organizacao">
+                <td rowspan="4"><h3>Registros Financeiros</h3></td>
+                <td><h3>A loja tem algum tipo de sistema de controle/cadastro das entradas e saídas de dinheiro?</h3></td>
+                <td><h3>{{ Resposta4 }}</h3></td>
+                <td><h3>{{ Feedback4 }}</h3></td>
+                <td class="muito-importante-color"><h3>Muito importante</h3></td>
+              </tr>
+              <tr *ngIf="perguntaserespostas || organizacao">
+                <td><h3>Com que frequência são feitos os registros das receitas e despesas da empresa?</h3></td>
+                <td><h3>{{ Resposta5 }}</h3></td>
+                <td><h3>{{ Feedback5 }}</h3></td>
+                <td class="pouco-importante-color"><h3>Pouco importante</h3></td>
+              </tr>
+              <tr *ngIf="perguntaserespostas || organizacao">
+                <td><h3>A empresa consegue ter controle de cada centavo que saiu e cada centavo que entrou em caixa ou banco no último mês?</h3></td>
+                <td><h3>{{ Resposta6 }}</h3></td>
+                <td><h3>{{ Feedback6 }}</h3></td>
+                <td class="muito-importante-color"><h3>Muito importante</h3></td>
+              </tr>
+              <tr *ngIf="perguntaserespostas || organizacao">
+                <td><h3>A empresa  consegue ter a previsão dos pagamentos e recebimentos para os próximos 90 dias?</h3></td>
+                <td><h3>{{ Resposta7 }}</h3></td>
+                <td><h3>{{ Feedback7 }}</h3></td>
+                <td class="importante-color"><h3>Importante</h3></td>
+              </tr>
+              <tr *ngIf="perguntaserespostas || demonstrativos">
+                <td rowspan="2"><h3>Relatórios</h3></td>
+                <td><h3>A empresa se apoia em relatórios financeiros e demonstrativos contábeis atualizados para acompanhar os resultados da empresa?</h3></td>
+                <td><h3>{{ Resposta8 }}</h3></td>
+                <td><h3>{{ Feedback8 }}</h3></td>
+                <td class="muito-importante-color"><h3>Muito importante</h3></td>
+              </tr>
+              <tr *ngIf="perguntaserespostas || demonstrativos">
+                <td><h3>Nos demonstrativos da empresa, gerados com o apoio da sua Contabilidade, você consegue visualizar de forma automática informações como: "Custos Variáveis", "Despesas Fixas" e "Margem de Contribuição"?</h3></td>
+                <td><h3>{{ Resposta9 }}</h3></td>
+                <td><h3>{{ Feedback9 }}</h3></td>
+                <td class="importante-color"><h3>Importante</h3></td>
+              </tr>
+              <!-- Quebra de Página -->
+              <tr *ngIf="perguntaserespostas || demonstrativos">
+                <td rowspan="1"><h3>Gráficos</h3></td>
+                <td><h3>Você tem gráficos, dashboards e informações visuais que auxiliem na sua tomada de decisões?</h3></td>
+                <td><h3>{{ Resposta10 }}</h3></td>
+                <td><h3>{{ Feedback10 }}</h3></td>
+                <td class="pouco-importante-color"><h3>Pouco importante</h3></td>
+              </tr>
+              <tr *ngIf="perguntaserespostas || analises">
+                <td rowspan="2"><h3>Resultado</h3></td>
+                <td><h3>A sua empresa faz no início de cada mês uma análise detalhada e periódica dos resultados financeiros do mês anterior?</h3></td>
+                <td><h3>{{ Resposta11 }}</h3></td>
+                <td><h3>{{ Feedback11 }}</h3></td>
+                <td class="muito-importante-color"><h3>Muito importante</h3></td>
+              </tr>
+              <tr *ngIf="perguntaserespostas || analises">
+                <td><h3>Ao analisar os seus resultados, você traça ações de melhorias específicas para cada problema observado na análise?</h3></td>
+                <td><h3>{{ Resposta12 }}</h3></td>
+                <td><h3>{{ Feedback12 }}</h3></td>
+                <td class="importante-color"><h3>Importante</h3></td>
+              </tr>
+              <tr *ngIf="perguntaserespostas || analises">
+                <td rowspan="2"><h3>Indicadores</h3></td>
+                <td><h3>A empresa possuí metas e acompanha os indicadores de performance?</h3></td>
+                <td><h3>{{ Resposta13 }}</h3></td>
+                <td><h3>{{ Feedback13 }}</h3></td>
+                <td class="importante-color"><h3>Importante</h3></td>
+              </tr>
+              <tr *ngIf="perguntaserespostas || analises">
+                <td><h3>Você conhece o conceito de Ponto de Equilíbrio e faz tal cálculo para sua empresa?</h3></td>
+                <td><h3>{{ Resposta14 }}</h3></td>
+                <td><h3>{{ Feedback14 }}</h3></td>
+                <td class="importante-color"><h3>Importante</h3></td>
+              </tr>
+              <tr *ngIf="perguntaserespostas || precificacao">
+                <td rowspan="3"><h3>Precificação</h3></td>
+                <td><h3>Como você define o preço dos seus produtos?</h3></td>
+                <td><h3>{{ Resposta15 }}</h3></td>
+                <td><h3>{{ Feedback15 }}</h3></td>
+                <td class="importante-color"><h3>Importante</h3></td>
+              </tr>
+              <tr *ngIf="perguntaserespostas || precificacao">
+                <td><h3>Você conhece qual é a %Margem de Contribuição Média dos seu mix de produtos?</h3></td>
+                <td><h3>{{ Resposta16 }}</h3></td>
+                <td><h3>{{ Feedback16 }}</h3></td>
+                <td class="importante-color"><h3>Importante</h3></td>
+              </tr>
+              <tr *ngIf="perguntaserespostas || precificacao">
+                <td><h3>Você conhece exatamente o preço ideal e a quantidade vendida de cada produto/serviço para lucrar o quanto você deseja?</h3></td>
+                <td><h3>{{ Resposta17 }}</h3></td>
+                <td><h3>{{ Feedback17 }}</h3></td>
+                <td class="muito-importante-color"><h3>Muito importante</h3></td>
+              </tr>
+              <tr *ngIf="perguntaserespostas || seguranca">
+                <td rowspan="3"><h3>Reserva Financeira</h3></td>
+                <td><h3>A empresa tem o costume de ficar no vermelho (cheque especial) no banco, ou então está com dívidas de contas atrasadas?</h3></td>
+                <td><h3>{{ Resposta18 }}</h3></td>
+                <td><h3>{{ Feedback18 }}</h3></td>
+                <td class="pouco-importante-color"><h3>Pouco importante</h3></td>
+              </tr>
+              <tr *ngIf="perguntaserespostas || seguranca">
+                <td><h3>O Comércio tem empréstimos?</h3></td>
+                <td><h3>{{ Resposta19 }}</h3></td>
+                <td><h3>{{ Feedback19 }}</h3></td>
+                <td class="pouco-importante-color"><h3>Pouco importante</h3></td>
+              </tr>
+              <tr *ngIf="perguntaserespostas || seguranca">
+                <td><h3>Se a empresa parasse de faturar, ou seja, se não entrasse absolutamente nenhum dinheiro, quanto tempo ela conseguiria pagar as despesas fixas sem entrar no negativo? (aproximadamente)</h3></td>
+                <td><h3>{{ Resposta20 }}</h3></td>
+                <td><h3>{{ Feedback20 }}</h3></td>
+                <td class="muito-importante-color"><h3>Muito importante</h3></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <table class="table table-bordered" *ngIf="diagnostico">
+
+            <thead>
+              <tr>
+                <th colspan="5" class="center fixed precision-color text-white"><h1>{{ empresaescolhida }} - {{ cnpj }}</h1></th>
+              </tr>
+              <tr>
+                <th class="center fixed "><h2>Sub Área</h2></th>
+                <th class="center fixed "><h2>Pontuação Atual</h2></th>
+                <th class="center fixed "><h2>Pontuação Mínima Recomendada</h2></th>
+                <th class="center fixed "><h2>Pontuação Desejada</h2></th>
+                <th class="center fixed "><h2>Urgência para atingir o desejado</h2></th>
               </tr>
             </thead>
 
             <tbody>
               <tr>
-                <td rowspan="3"><h3>Separação das Finanças</h3></td>
-                <td><h3>A empresa possuí conta bancária pessoa jurídica e utiliza ela SOMENTE para pagamentos e recebimentos da empresa?</h3></td>
-                <td><h3>{{ Resposta1 }}</h3></td>
+                <td colspan="5"><h3>Organização</h3></td>
               </tr>
               <tr>
-                <td><h3>Os sócios recebem um pró-labore fixo todo mês (ou seja, recebem um salário assim como todos os demais funcionários)?</h3></td>
-                <td><h3>{{ Resposta2 }}</h3></td>
+                <td><h3>Separação das Finanças</h3></td>
+                <td class=""><h3>{{ pontuacaofinancas.toFixed(2) }}%</h3></td>
+                <td><h3>75%</h3></td>
+                <td><h3>100%</h3></td>
+                <td class="pouco-importante-color"><h3>Urgente</h3></td>
               </tr>
               <tr>
-                <td><h3>Existem hoje dentro das contas pagas pela empresa contas pessoais dos sócios?</h3></td>
-                <td><h3>{{ Resposta3 }}</h3></td>
+                <td><h3>Registros Financeiros</h3></td>
+                <td class=""><h3>{{ registrofinanceiro.toFixed(2) }}%</h3></td>
+                <td><h3>81%</h3></td>
+                <td><h3>100%</h3></td>
+                <td class="pouco-importante-color"><h3>Urgente</h3></td>
               </tr>
               <tr>
-                <td rowspan="4"><h3>Registros Financeiros</h3></td>
-                <td><h3>A loja tem algum tipo de sistema de controle/cadastro das entradas e saídas de dinheiro?</h3></td>
-                <td><h3>{{ Resposta4 }}</h3></td>
+                <td colspan="5"><h3>Demonstrativos</h3></td>
               </tr>
               <tr>
-                <td><h3>Os sócios recebem um pró-labore fixo todo mês (ou seja, recebem um salário assim como todos os demais funcionários)?</h3></td>
-                <td><h3>{{ Resposta5 }}</h3></td>
+                <td><h3>Relatorios</h3></td>
+                <td class=""><h3>{{ relatorios.toFixed(2) }}%</h3></td>
+                <td><h3>88%</h3></td>
+                <td><h3>100%</h3></td>
+                <td class="pouco-importante-color"><h3>Urgente</h3></td>
               </tr>
               <tr>
-                <td><h3>A empresa consegue ter controle de cada centavo que saiu e cada centavo que entrou em caixa ou banco no último mês?</h3></td>
-                <td><h3>{{ Resposta6 }}</h3></td>
+                <td><h3>Gráficos</h3></td>
+                <td><h3>{{ graficos.toFixed(2) }}%</h3></td>
+                <td><h3>50%</h3></td>
+                <td><h3>100%</h3></td>
+                <td class="pouco-importante-color"><h3>Urgente</h3></td>
               </tr>
               <tr>
-                <td><h3>A empresa consegue ter a previsão dos pagamentos e recebimentos para os próximos 90 dias?</h3></td>
-                <td><h3>{{ Resposta7 }}</h3></td>
+                <td colspan="5"><h3>Análise</h3></td>
               </tr>
               <tr>
-                <td rowspan="2"><h3>Relatórios</h3></td>
-                <td><h3>A empresa se apoia em relatórios financeiros e demonstrativos contábeis atualizados para acompanhar os resultados da empresa?</h3></td>
-                <td><h3>{{ Resposta8 }}</h3></td>
+                <td><h3>Resultado</h3></td>
+                <td><h3>{{ resultado.toFixed(2) }}%</h3></td>
+                <td><h3>88%</h3></td>
+                <td><h3>100%</h3></td>
+                <td class="pouco-importante-color"><h3>Urgente</h3></td>
               </tr>
               <tr>
-                <td><h3>Nos demonstrativos da empresa, gerados com o apoio da sua Contabilidade, você consegue visualizar de forma automática informações como: "Custos Variáveis", "Despesas Fixas" e "Margem de Contribuição"?</h3></td>
-                <td><h3>{{ Resposta9 }}</h3></td>
+                <td><h3>Indicadores</h3></td>
+                <td><h3>{{ indicadores.toFixed(2) }}%</h3></td>
+                <td><h3>75%</h3></td>
+                <td><h3>100%</h3></td>
+                <td class="pouco-importante-color"><h3>Urgente</h3></td>
               </tr>
               <tr>
-                <td rowspan="1"><h3>Gráficos</h3></td>
-                <td><h3>Você tem gráficos, dashboards e informações visuais que auxiliem na sua tomada de decisões?</h3></td>
-                <td><h3>{{ Resposta10 }}</h3></td>
+                <td colspan="5"><h3>Custos</h3></td>
               </tr>
               <tr>
-                <td rowspan="2"><h3>Resultado</h3></td>
-                <td><h3>A sua empresa faz no início de cada mês uma análise detalhada e periódica dos resultados financeiros do mês anterior?</h3></td>
-                <td><h3>{{ Resposta11 }}</h3></td>
+                <td><h3>Precificação</h3></td>
+                <td><h3>{{ precificacaoempresa.toFixed(2) }}%</h3></td>
+                <td><h3>83%</h3></td>
+                <td><h3>100%</h3></td>
+                <td class="pouco-importante-color"><h3>Urgente</h3></td>
               </tr>
               <tr>
-                <td><h3>Ao analisar os seus resultados, você traça ações de melhorias específicas para cada problema observado na análise?</h3></td>
-                <td><h3>{{ Resposta12 }}</h3></td>
+                <td colspan="5"><h3>Segurança</h3></td>
               </tr>
               <tr>
-                <td rowspan="2"><h3>Indicadores</h3></td>
-                <td><h3>A empresa possuí metas e acompanha os indicadores de performance?</h3></td>
-                <td><h3>{{ Resposta13 }}</h3></td>
+                <td><h3>Reserva Financeira</h3></td>
+                <td><h3>{{ reservafinanceira.toFixed(2) }}%</h3></td>
+                <td><h3>67%</h3></td>
+                <td><h3>100%</h3></td>
+                <td class="pouco-importante-color"><h3>Urgente</h3></td>
               </tr>
-              <tr>
-                <td><h3>Você conhece o conceito de Ponto de Equilíbrio e faz tal cálculo para sua empresa?</h3></td>
-                <td><h3>{{ Resposta14 }}</h3></td>
-              </tr>
-              <tr>
-                <td rowspan="3"><h3>Precificação</h3></td>
-                <td><h3>Como você define o preço dos seus produtos?</h3></td>
-                <td><h3>{{ Resposta15 }}</h3></td>
-              </tr>
-              <tr>
-                <td><h3>Você conhece qual é a %Margem de Contribuição Média dos seu mix de produtos?</h3></td>
-                <td><h3>{{ Resposta17 }}</h3></td>
-              </tr>
-              <tr>
-                <td><h3>Você conhece exatamente o preço ideal e a quantidade vendida de cada produto/serviço para lucrar o quanto você deseja?</h3></td>
-                <td><h3>{{ Resposta18 }}</h3></td>
-              </tr>
-              <tr>
-                <td rowspan="3"><h3>Reserva Financeira</h3></td>
-                <td><h3>A empresa tem o costume de ficar no vermelho (cheque especial) no banco, ou então está com dívidas de contas atrasadas?</h3></td>
-                <td><h3>{{ Resposta19 }}</h3></td>
-              </tr>
-              <tr>
-                <td><h3>O Comércio tem empréstimos?</h3></td>
-                <td><h3>{{ Resposta20 }}</h3></td>
-              </tr>
-              <tr>
-                <td><h3>Se a empresa parasse de faturar, ou seja, se não entrasse absolutamente nenhum dinheiro, quanto tempo ela conseguiria pagar as despesas fixas sem entrar no negativo? (aproximadamente)</h3></td>
-                <td><h3>{{ Resposta21 }}</h3></td>
-              </tr>
+
             </tbody>
-        </table>
+          </table>
+
+            <div *ngIf="dashboard">
+              <div class="linha">
+                <div class="azul"></div>
+                <h2>Pontuação Atual</h2>
+              </div>
+              <div class="linha">
+                <div class="verde"></div>
+                <h2>Pontuação Desejada</h2>
+              </div>
+            </div>
+      
+            <div id="grafico" style="width: 80%; height: 300px;" *ngIf="dashboard"></div>
+            <div id="grafico2" style="width: 80%; height: 300px;" *ngIf="dashboard"></div>
+
+        </div>
 
     </div>
+
+
+
+
 
 </div>

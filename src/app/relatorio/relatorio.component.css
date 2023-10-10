@@ -7,8 +7,59 @@
     margin: 0;
 }
 
-.relatorio{
+#content{
     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+
+.precision-color{
+    background-color: rgb(3, 133, 133);
+}
+
+.muito-importante-color{
+    background-color: rgb(100, 187, 100);
+}
+
+.pouco-importante-color{
+    background-color: rgb(206, 218, 103);
+}
+
+.atencao-importante-color{
+    background-color: rgb(219, 62, 62);
+}
+
+.importante-color{
+    background-color: rgb(120, 138, 241);
+}
+
+.importante-color{
+    background-color: rgb(120, 138, 241);
+}
+
+.azul{
+    width: 50px;
+    height: 50px;
+    background-color: rgb(120, 138, 241);
+}
+
+.verde{
+    width: 50px;
+    height: 50px;
+    background-color: rgb(100, 187, 100);
+}
+
+.linha{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    margin: 10px;
+}
+
+.relatorio{
+    display: flex;  
     flex-direction: column;
     justify-content: space-between;
     width: 90%;
@@ -16,6 +67,9 @@
 }
 
 .sub-menu{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
     margin-bottom: 15px;
 }
 
@@ -32,6 +86,13 @@ mat-form-field{
 .card-custon{
     height: 300px;
     width: 70%;
+}
+
+thead h1{
+    text-align: center;
+    font-family: 'Oswald', sans-serif;
+    font-size: 25px;
+    text-transform: uppercase;
 }
 
 h2{
@@ -110,10 +171,27 @@ h2{
     cursor: pointer;
     transition: background-color 0.3s, box-shadow 0.3s;
   }
+
+  .custom-button-red {
+    background-color: #ffffff;
+    color:  rgb(206, 31, 31);
+    font-size: 16px;
+    padding: 12px 20px;
+    border: solid  rgb(206, 31, 31) 2px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s;
+  }
   
   .custom-button:hover {
     color: #fff;
     background-color: rgb(3, 133, 133);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .custom-button-red:hover {
+    color: #fff;
+    background-color: rgb(206, 31, 31);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   }
   
